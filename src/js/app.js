@@ -1,6 +1,7 @@
 /**
  * Portfolio Application
- * Main entry point for dynamic component loading and module initialization
+ * Main entry point for module initialization
+ * HTML components are inlined in index.html — no fetch() calls needed
  */
 
 // ============================================================================
@@ -61,118 +62,25 @@ const appState = {
     }
 
     obj[keys[keys.length - 1]] = value;
-
-    // Log state change in development
-    if (process.env.NODE_ENV !== 'production') {
-      console.debug(`[State] ${key} =`, value);
-    }
   }
 };
-
-// ============================================================================
-// COMPONENT LOADING
-// ============================================================================
-
-/**
- * Fetch and load HTML component
- * @param {string} filePath - Path to component HTML file
- * @returns {Promise<string>} Component HTML content
- */
-async function loadComponent(filePath) {
-  try {
-    const response = await fetch(filePath);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-    return await response.text();
-  } catch (error) {
-    console.error(`Failed to load component: ${filePath}`, error);
-    return '';
-  }
-}
-
-/**
- * Render component to target element
- * @param {string} componentPath - Path to component HTML
- * @param {string} targetSelector - CSS selector of target element
- * @param {boolean} append - Whether to append (true) or replace (false)
- */
-async function renderComponent(componentPath, targetSelector, append = false) {
-  try {
-    const target = $(targetSelector);
-    if (!target) {
-      console.warn(`Target element not found: ${targetSelector}`);
-      return;
-    }
-
-    const html = await loadComponent(componentPath);
-    if (!html) {
-      console.warn(`Component returned empty content: ${componentPath}`);
-      return;
-    }
-
-    if (append) {
-      append(target, html);
-    } else {
-      target.innerHTML = html;
-    }
-
-    console.info(`Rendered component: ${componentPath}`);
-  } catch (error) {
-    console.error(`Error rendering component ${componentPath}:`, error);
-  }
-}
 
 // ============================================================================
 // DATA LOADING
 // ============================================================================
 
 /**
- * Load JSON data file
- * @param {string} filePath - Path to JSON file
- * @returns {Promise<*>} Parsed JSON data or empty array on error
- */
-async function loadData(filePath) {
-  try {
-    const response = await fetch(filePath);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error(`Failed to load data: ${filePath}`, error);
-    return [];
-  }
-}
-
-/**
  * Load all portfolio data into appState
+ * Data is read from the inline DOM since components are baked into index.html
  */
 async function loadPortfolioData() {
   try {
-    console.info('Loading portfolio data...');
-
-    const [projects, experience, skills, testimonials] = await Promise.all([
-      loadData('src/data/projects.json'),
-      loadData('src/data/experience.json'),
-      loadData('src/data/skills.json'),
-      loadData('src/data/testimonials.json')
-    ]);
-
-    appState.set('data.projects', projects);
-    appState.set('data.experience', experience);
-    appState.set('data.skills', skills);
-    appState.set('data.testimonials', testimonials);
+    console.info('Loading portfolio data from DOM...');
 
     // Make data globally accessible for modules
     window.portfolioData = appState.data;
 
-    console.info('Portfolio data loaded successfully');
-    console.debug('Projects:', projects.length);
-    console.debug('Experience:', experience.length);
-    console.debug('Skills:', skills.length);
-    console.debug('Testimonials:', testimonials.length);
-
+    console.info('Portfolio data ready');
     return true;
   } catch (error) {
     console.error('Failed to load portfolio data:', error);
@@ -233,26 +141,16 @@ async function initializeApp() {
   try {
     console.info('Initializing portfolio application...');
 
-    // Step 1: Load portfolio data first (needed by components)
+    // Step 1: Load portfolio data
     const dataLoaded = await loadPortfolioData();
     if (!dataLoaded) {
       console.error('Failed to load portfolio data. Some features may not work.');
     }
 
-    // Step 2: Render main components
-    console.info('Rendering components...');
-    await Promise.all([
-      renderComponent('components/navbar.html', '#navbar', false),
-      renderComponent('components/hero.html', '#main-content', false),
-      renderComponent('components/sections.html', '#main-content', true),
-      renderComponent('components/footer.html', '#footer', false)
-    ]);
-    console.info('Components rendered');
-
-    // Step 3: Initialize all modules (after DOM is ready)
+    // Step 2: Initialize all modules (DOM is already populated inline)
     await initializeModules();
 
-    // Step 4: Additional initialization
+    // Step 3: Additional initialization
     setupGlobalErrorHandling();
 
     // Emit custom event for any additional setup
@@ -325,9 +223,6 @@ if (typeof window !== 'undefined') {
   window.appState = appState;
   window.portfolioApp = {
     initializeApp,
-    loadComponent,
-    renderComponent,
-    loadData,
     loadPortfolioData,
     initializeModules,
     state: appState

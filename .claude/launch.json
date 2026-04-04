@@ -3,7 +3,9 @@
   "configurations": [
     {
       "name": "portfolio",
-      "url": "http://localhost:8765"
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-c", "import http.server; http.server.HTTPServer(('localhost', 8765), http.server.SimpleHTTPRequestHandler).serve_forever()"],
+      "port": 8765
     }
   ]
 }

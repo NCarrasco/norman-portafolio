@@ -23,19 +23,9 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="src/css/reset.css">
-    <link rel="stylesheet" href="src/css/variables.css">
-    <link rel="stylesheet" href="src/css/utilities.css">
-    <link rel="stylesheet" href="src/css/animations.css">
-    <link rel="stylesheet" href="src/css/responsive.css">
-    <link rel="stylesheet" href="src/css/components/navbar.css">
-    <link rel="stylesheet" href="src/css/components/hero.css">
-    <link rel="stylesheet" href="src/css/components/cards.css">
-    <link rel="stylesheet" href="src/css/components/forms.css">
-    <link rel="stylesheet" href="src/css/components/buttons.css">
-    <link rel="stylesheet" href="src/css/components/modules.css">
-    <link rel="stylesheet" href="src/css/layouts/sections.css">
-    <link rel="stylesheet" href="src/css/layouts/grid.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="src/css/theme.css">
+    <link rel="stylesheet" href="src/css/modules.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -46,15 +36,783 @@
 <body>
     <div id="app" class="app-container">
         <!-- Navigation -->
-        <nav id="navbar" class="navbar"></nav>
+        <nav id="navbar" class="navbar">
+          <a href="#" class="nav-logo">Norman Carrasco</a>
 
-        <!-- Main content will be rendered here -->
+          <!-- Mobile hamburger menu -->
+          <div class="nav-hamburger" data-toggle="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- Navigation links -->
+          <ul class="nav-links" data-menu="primary">
+            <li><a href="#sobre" data-nav-link="about">Sobre mí</a></li>
+            <li><a href="#soft-skills" data-nav-link="skills">Soft Skills</a></li>
+            <li><a href="#testimonios" data-nav-link="testimonials">Testimonios</a></li>
+            <li><a href="#experiencia" data-nav-link="experience">Experiencia</a></li>
+            <li><a href="#proyectos" data-nav-link="projects">Proyectos</a></li>
+            <li><a href="#stack" data-nav-link="stack">Stack</a></li>
+            <li><a href="#educacion" data-nav-link="education">Educación</a></li>
+            <li><a href="#certificaciones" data-nav-link="certifications">Certificaciones</a></li>
+            <li><a href="#contacto" data-nav-link="contact">Contacto</a></li>
+          </ul>
+
+          <!-- Theme toggle and search icons -->
+          <div class="nav-actions">
+            <button class="nav-theme-toggle" data-action="toggle-theme" title="Toggle theme">
+              <!-- Sun icon (light mode) -->
+              <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <!-- Moon icon (dark mode) -->
+              <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+
+            <button class="nav-search" data-action="open-search" title="Search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Main content -->
         <main id="main-content" class="main-content">
-            <!-- Content loaded dynamically by JavaScript -->
+
+          <!-- HERO SECTION -->
+          <section class="hero" data-section="hero">
+            <div class="hero-left">
+              <p class="hero-eyebrow fade-in">Data Scientist & BI Consultant</p>
+              <h1 class="hero-name fade-in">Norman<br><em>Carrasco</em></h1>
+              <p class="hero-tagline fade-in">
+                Transformo datos complejos en <strong>decisiones estratégicas</strong>.
+                Experto en analítica de datos, machine learning y business intelligence
+                con más de <strong>10 años de experiencia</strong>, incluyendo 4 años en gestión de fraude.
+              </p>
+              <div class="hero-ctas fade-in">
+                <a href="https://github.com/NCarrasco" target="_blank" class="btn btn-primary" data-cta="github">GitHub →</a>
+                <a href="https://www.linkedin.com/in/nocarrasco" target="_blank" class="btn btn-outline" data-cta="linkedin">LinkedIn</a>
+                <a href="https://apren2tics.wordpress.com" target="_blank" class="btn btn-outline" data-cta="blog">Blog</a>
+                <a href="Norman_Carrasco_CV.pdf" download class="btn btn-outline" data-cta="cv">📥 CV</a>
+              </div>
+            </div>
+
+            <div class="hero-right fade-in">
+              <div class="hero-image-container">
+                <img src="image/picture-norman.jpeg" alt="Norman Carrasco" class="hero-image">
+              </div>
+
+              <div class="hero-stats" data-stats="metrics">
+                <div class="stat-box" data-stat="experience">
+                  <div class="stat-number">10+</div>
+                  <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat-box" data-stat="projects">
+                  <div class="stat-number">6</div>
+                  <div class="stat-label">Proyectos ML/DS</div>
+                </div>
+                <div class="stat-box" data-stat="model">
+                  <div class="stat-number">91%</div>
+                  <div class="stat-label">R² mejor modelo</div>
+                </div>
+                <div class="stat-box" data-stat="repos">
+                  <div class="stat-number">22</div>
+                  <div class="stat-label">Repos públicos</div>
+                </div>
+              </div>
+
+              <p class="hero-location">
+                <span class="dot"></span>
+                Santo Domingo, República Dominicana
+              </p>
+            </div>
+          </section>
+
+          <!-- ABOUT SECTION -->
+          <section id="sobre" data-section="about">
+            <div class="section-header">
+              <span class="section-number">01</span>
+              <h2 class="section-title">Sobre mí</h2>
+            </div>
+            <div class="about-grid">
+              <div class="about-photo">
+                <div class="about-photo-frame">
+                  <img src="image/picture-norman.jpeg" alt="Norman Carrasco">
+                </div>
+                <div class="about-photo-name">Norman Carrasco</div>
+                <div class="about-photo-title">Data Scientist · BI Consultant</div>
+              </div>
+              <div class="about-text">
+                <p>
+                  Soy un profesional con formación en Ingeniería Informática y actualmente cursando
+                  una <strong>Maestría en Ciencia de Datos e Inteligencia Artificial</strong> en la UASD.
+                  Mi trabajo combina el rigor técnico del machine learning con la visión estratégica del business intelligence.
+                </p>
+                <p>
+                  En mi trabajo actual me desempeño como subgerente de análisis de datos para la prevención del fraude.
+                </p>
+              </div>
+              <div class="about-details" data-details="profile">
+                <div class="detail-row">
+                  <span class="detail-label">Ubicación</span>
+                  <span class="detail-value">Santo Domingo, República Dominicana</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Rol actual</span>
+                  <span class="detail-value">Subgerente Prevención Interna — BANRESERVAS</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Maestría</span>
+                  <span class="detail-value">Ciencia de Datos e IA — UASD (2024–actual)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Enfoque</span>
+                  <span class="detail-value">Fraude, desarrollo, software</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Idiomas</span>
+                  <span class="detail-value">Español (nativo) · Inglés (B1)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Email</span>
+                  <span class="detail-value">norman.carrasco@hotmail.com</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SOFT SKILLS SECTION -->
+          <section id="soft-skills" data-section="skills">
+            <div class="section-header">
+              <span class="section-number">02</span>
+              <h2 class="section-title">Habilidades blandas</h2>
+            </div>
+            <div class="skills-grid" data-skills="soft">
+              <div class="skill-item" data-skill="leadership">
+                <div class="skill-header">
+                  <span class="skill-name">Liderazgo</span>
+                  <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 90%;"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="communication">
+                <div class="skill-header">
+                  <span class="skill-name">Comunicación</span>
+                  <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="critical-thinking">
+                <div class="skill-header">
+                  <span class="skill-name">Análisis crítico</span>
+                  <span class="skill-level">92%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 92%;"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="problem-solving">
+                <div class="skill-header">
+                  <span class="skill-name">Resolución de problemas</span>
+                  <span class="skill-level">88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 88%;"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="project-management">
+                <div class="skill-header">
+                  <span class="skill-name">Gestión de proyectos</span>
+                  <span class="skill-level">87%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 87%;"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="mentoring">
+                <div class="skill-header">
+                  <span class="skill-name">Mentoría</span>
+                  <span class="skill-level">83%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 83%;"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TESTIMONIALS SECTION -->
+          <section id="testimonios" data-section="testimonials">
+            <div class="section-header">
+              <span class="section-number">03</span>
+              <h2 class="section-title">Testimonios</h2>
+            </div>
+            <div class="testimonials-grid" data-testimonials="list">
+              <div class="testimonial-card" data-testimonial="bienvenido">
+                <div class="testimonial-quote">"He tenido el privilegio de trabajar con Norman en varios proyectos y su desempeño siempre ha superado las expectativas. Su dedicación al trabajo es ejemplar, demostrando no solo un compromiso profundo con sus responsabilidades, sino también una notable habilidad para manejar tareas complejas y plazos ajustados. Una de las cualidades más impresionantes de Norman es su capacidad para enfrentar desafíos con una actitud positiva y resolutiva. Su habilidad para analizar problemas y proponer soluciones innovadoras ha sido crucial en numerosas ocasiones, permitiendo al equipo superar obstáculos que parecían insuperables."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-name">Bienvenido Cuevas</div>
+                  <div class="testimonial-title">CEO & General Manager</div>
+                  <div class="testimonial-company">SOLFITE, SRL</div>
+                </div>
+              </div>
+
+              <div class="testimonial-card" data-testimonial="alberto">
+                <div class="testimonial-quote">"Tuve el placer de trabajar con Norman y puedo decir con certeza que es un líder excepcional. Su capacidad para resolver problemas de manera eficiente y su enfoque en el desarrollo del equipo lo convierten en un profesional destacado. En particular, recuerdo que en cada proyecto en el cual trabajamos juntos se ha destacado su liderazgo y visión estratégica las cuales fueron clave para lograr resultados exitosos. Sin duda, Norman es una persona comprometida y con una gran capacidad para enfrentar desafíos. Recomiendo su trabajo sin dudarlo."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-name">Alberto Poy</div>
+                  <div class="testimonial-title">Especialista en Investigaciones Electrónicas y Fraude Financiero</div>
+                  <div class="testimonial-company">Prevención del Fraude</div>
+                </div>
+              </div>
+
+              <div class="testimonial-card" data-testimonial="elvin">
+                <div class="testimonial-quote">"Actualmente, trabajo bajo la supervisión del Sr. Norman en el área de Prevención Interna. Su liderazgo y visión estratégica han sido clave tanto para mi crecimiento profesional como para el del equipo, contribuyendo al logro de nuestros objetivos. Su disposición para compartir conocimientos y brindar apoyo a cada miembro del equipo es verdaderamente inspiradora. Sin duda, es un líder comprometido, estratégico y con una visión clara para el éxito, impulsando a quienes trabajan con él a alcanzar su máximo potencial."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-name">Elvin Matos</div>
+                  <div class="testimonial-title">Especialista en Prevención Interna</div>
+                  <div class="testimonial-company">Prevención del Fraude</div>
+                </div>
+              </div>
+
+              <div class="testimonial-card" data-testimonial="francisco">
+                <div class="testimonial-quote">"Norman como compañero de trabajo es excelente. Es muy proactivo y sabe escuchar y hablar con los demás, tiene buena disposición y se enfoca en resolver sus asignaciones. Su expertise en análisis de datos y su actitud colaborativa lo convierten en un profesional muy valioso para cualquier equipo."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-name">Francisco Alberto Terrero Ramírez</div>
+                  <div class="testimonial-title">Data Governance | Data Analyst</div>
+                  <div class="testimonial-company">SQL Server | Oracle | Power BI</div>
+                </div>
+              </div>
+
+              <div class="testimonial-card" data-testimonial="daniel">
+                <div class="testimonial-quote">"Trabajar con Norman fue una experiencia enriquecedora y motivadora. Su profesionalismo y dedicación quedaron claros desde el primer momento, pero lo que realmente destaca es su capacidad para liderar equipos con empatía y visión estratégica."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-name">Daniel Abreu González</div>
+                  <div class="testimonial-title">Full Stack Developer</div>
+                  <div class="testimonial-company">Co-Founder at Syner X</div>
+                </div>
+              </div>
+
+              <div class="testimonial-card" data-testimonial="carolina">
+                <div class="testimonial-quote">"Norman tiene un talento único para conectar con las personas, entender sus fortalezas y guiarlas hacia objetivos comunes siempre con un enfoque colaborativo y respetuoso. Su liderazgo inspirador marcó una diferencia tangible en el desempeño del equipo."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-name">Carolina Orozco Méndez</div>
+                  <div class="testimonial-title">Economista</div>
+                  <div class="testimonial-company">Universidad Autónoma de Santo Domingo</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- EXPERIENCE SECTION -->
+          <section id="experiencia" data-section="experience">
+            <div class="section-header">
+              <span class="section-number">04</span>
+              <h2 class="section-title">Experiencia</h2>
+            </div>
+            <div class="exp-list" data-experience="timeline">
+              <div class="exp-item" data-job="banreservas-1">
+                <div class="exp-period">Jul 2024 — Actualidad</div>
+                <div class="exp-content">
+                  <div class="exp-role">Subgerente de Prevención Interna</div>
+                  <div class="exp-company">Banreservas</div>
+                  <div class="exp-desc">
+                    Liderazgo de equipo de 5 especialistas en monitoreo de transacciones y desarrollo de soluciones analíticas.
+                    Diseño e implementación de tableros de Business Intelligence en Power BI y reportería avanzada en ReportBuilder
+                    para el análisis de transacciones atípicas y la toma de decisiones estratégicas.
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-item" data-job="banreservas-2">
+                <div class="exp-period">Abr 2022 — Jul 2024</div>
+                <div class="exp-content">
+                  <div class="exp-role">Encargado de Prevención Interna</div>
+                  <div class="exp-company">Banreservas</div>
+                  <div class="exp-desc">
+                    Desarrollo de soluciones de análisis y tableros de Business Intelligence en Power BI y ReportBuilder
+                    orientados al monitoreo de transacciones atípicas y la toma de decisiones estratégicas.
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-item" data-job="banreservas-3">
+                <div class="exp-period">Jun 2016 — Abr 2022</div>
+                <div class="exp-content">
+                  <div class="exp-role">Analista de Datos</div>
+                  <div class="exp-company">Banreservas</div>
+                  <div class="exp-desc">
+                    Responsable del desarrollo y mantenimiento de reportes estratégicos para la continuidad del negocio.
+                    Participé en la modernización de la infraestructura analítica del banco, incluyendo la transición de ETL
+                    y la puesta en producción del nuevo core bancario Signature.
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-item" data-job="infosyp">
+                <div class="exp-period">Jun 2015 — Jul 2016</div>
+                <div class="exp-content">
+                  <div class="exp-role">Analista de Desarrollo de Software</div>
+                  <div class="exp-company">Infosyp</div>
+                  <div class="exp-desc">
+                    Como consultor externo para Banreservas, lideré el desarrollo de webservices para la integración
+                    de aplicaciones y servicios internos y externos del banco. Participé en el área de Banking.
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-item" data-job="mopc">
+                <div class="exp-period">Nov 2014 — Ene 2015</div>
+                <div class="exp-content">
+                  <div class="exp-role">Analista de Desarrollo de Software</div>
+                  <div class="exp-company">Ministerio de Obras Públicas y Comunicaciones</div>
+                  <div class="exp-desc">
+                    Desarrollé e implementé servicios web que facilitaron la interoperabilidad entre los sistemas
+                    del Ministerio y las plataformas digitales del Estado dominicano.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PROJECTS SECTION -->
+          <section id="proyectos" data-section="projects">
+            <div class="section-header">
+              <span class="section-number">05</span>
+              <h2 class="section-title">Proyectos</h2>
+            </div>
+            <div class="projects-grid" data-projects="grid">
+              <div class="project-card project-card-featured" data-project="fraud-workflow">
+                <div class="project-illustration"></div>
+                <div class="project-body">
+                  <div class="project-tag">Fraude · .NET · Dashboard</div>
+                  <div class="project-name">Fraud Workflow Management</div>
+                  <div class="project-desc">
+                    Plataforma web para gestión de alertas operativas, asignación a analistas,
+                    control de estados y visibilidad ejecutiva con auditoría completa del ciclo del caso.
+                  </div>
+                  <div class="project-metrics">
+                    <span class="metric-pill">ASP.NET Core MVC</span>
+                    <span class="metric-pill">.NET 8</span>
+                    <span class="metric-pill">Bootstrap</span>
+                  </div>
+                  <a href="https://github.com/NCarrasco/FRAUD-WORKFLOW-MANAGEMENT" target="_blank" class="project-link">
+                    Ver en GitHub
+                    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card" data-project="matricula">
+                <div class="project-illustration"></div>
+                <div class="project-body">
+                  <div class="project-tag">ML · Clasificación · UASD</div>
+                  <div class="project-name">Clasificación Matrícula Centros Educativos RD</div>
+                  <div class="project-desc">
+                    Predicción de alta/baja matrícula en 18,350 centros educativos dominicanos
+                    usando datos abiertos del Ministerio de Educación.
+                  </div>
+                  <div class="project-metrics">
+                    <span class="metric-pill">AUC-ROC 0.8443</span>
+                    <span class="metric-pill">Accuracy 77.14%</span>
+                    <span class="metric-pill">Random Forest</span>
+                  </div>
+                  <a href="https://github.com/NCarrasco/clasificacion-matricula-rd" target="_blank" class="project-link">
+                    Ver GitHub
+                    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card" data-project="house-prices">
+                <div class="project-illustration"></div>
+                <div class="project-body">
+                  <div class="project-tag">ML · Regresión · Kaggle</div>
+                  <div class="project-name">Predicción Precios de Viviendas</div>
+                  <div class="project-desc">
+                    Modelo de regresión supervisada sobre House Prices Dataset (Ames, Iowa 2006–2010).
+                    Ridge Regression con 11 features de ingeniería seleccionado como modelo óptimo.
+                  </div>
+                  <div class="project-metrics">
+                    <span class="metric-pill">R² 0.9161</span>
+                    <span class="metric-pill">Ridge α=10</span>
+                    <span class="metric-pill">11 features</span>
+                  </div>
+                  <a href="https://colab.research.google.com/drive/1n716uhElSucr2f9sEIzoLtjxJ8aOqCDY" target="_blank" class="project-link">
+                    Ver en Colab
+                    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card" data-project="labor-attrition">
+                <div class="project-illustration"></div>
+                <div class="project-body">
+                  <div class="project-tag">Análisis · RR.HH. · Python</div>
+                  <div class="project-name">Evaluación Riesgo de Abandono Laboral</div>
+                  <div class="project-desc">
+                    Análisis descriptivo del riesgo de abandono en Zona Franca de las Américas.
+                    1,470 empleados, scoring de abandono, KPIs financieros y distribución por departamento.
+                  </div>
+                  <div class="project-metrics">
+                    <span class="metric-pill">Tasa 16.12%</span>
+                    <span class="metric-pill">USD$1.3M riesgo</span>
+                    <span class="metric-pill">1,470 registros</span>
+                  </div>
+                  <a href="https://github.com/NCarrasco/riesgo-abandono-laboral" target="_blank" class="project-link">
+                    Ver GitHub
+                    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card" data-project="oulad">
+                <div class="project-illustration"></div>
+                <div class="project-body">
+                  <div class="project-tag">ML · OULAD · Python</div>
+                  <div class="project-name">Análisis Desempeño Estudiantil OULAD</div>
+                  <div class="project-desc">
+                    Análisis avanzado del desempeño estudiantil con técnicas estadísticas y
+                    modelos de aprendizaje supervisado sobre el dataset abierto OULAD.
+                  </div>
+                  <div class="project-metrics">
+                    <span class="metric-pill">SVM</span>
+                    <span class="metric-pill">Redes Neurales</span>
+                    <span class="metric-pill">Regresión</span>
+                  </div>
+                  <a href="https://github.com/NCarrasco/oulad-analisis" target="_blank" class="project-link">
+                    Ver en GitHub
+                    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- STACK SECTION -->
+          <section id="stack" data-section="stack">
+            <div class="section-header">
+              <span class="section-number">06</span>
+              <h2 class="section-title">Stack técnico</h2>
+            </div>
+            <div class="stack-grid" data-stack="categories">
+              <div class="stack-group" data-category="languages">
+                <div class="stack-group-label">Lenguajes</div>
+                <div class="stack-items">
+                  <span class="stack-pill">Python</span>
+                  <span class="stack-pill">C#</span>
+                  <span class="stack-pill">SQL Server</span>
+                  <span class="stack-pill">Oracle PL/SQL</span>
+                  <span class="stack-pill">JavaScript</span>
+                  <span class="stack-pill">R</span>
+                  <span class="stack-pill">DAX</span>
+                </div>
+              </div>
+              <div class="stack-group" data-category="data-science">
+                <div class="stack-group-label">Data Science & ML</div>
+                <div class="stack-items">
+                  <span class="stack-pill">Scikit-learn</span>
+                  <span class="stack-pill">Pandas</span>
+                  <span class="stack-pill">TensorFlow</span>
+                  <span class="stack-pill">Keras</span>
+                  <span class="stack-pill">Statsmodels</span>
+                  <span class="stack-pill">Seaborn</span>
+                  <span class="stack-pill">NumPy</span>
+                  <span class="stack-pill">SymPy</span>
+                </div>
+              </div>
+              <div class="stack-group" data-category="bi-data-engineering">
+                <div class="stack-group-label">BI & Data Engineering</div>
+                <div class="stack-items">
+                  <span class="stack-pill">Power BI</span>
+                  <span class="stack-pill">Tableau</span>
+                  <span class="stack-pill">IBM DataStage</span>
+                  <span class="stack-pill">ETL / DWH</span>
+                  <span class="stack-pill">ReportBuilder</span>
+                  <span class="stack-pill">SQLAlchemy</span>
+                </div>
+              </div>
+              <div class="stack-group" data-category="development-devops">
+                <div class="stack-group-label">Desarrollo & DevOps</div>
+                <div class="stack-items">
+                  <span class="stack-pill">.NET 8 / MVC</span>
+                  <span class="stack-pill">FastAPI</span>
+                  <span class="stack-pill">Bootstrap</span>
+                  <span class="stack-pill">Azure</span>
+                  <span class="stack-pill">Docker</span>
+                  <span class="stack-pill">Git / GitHub</span>
+                  <span class="stack-pill">REST APIs</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- EDUCATION SECTION -->
+          <section id="educacion" data-section="education">
+            <div class="section-header">
+              <span class="section-number">07</span>
+              <h2 class="section-title">Educación</h2>
+            </div>
+            <div class="edu-list" data-education="timeline">
+              <div class="edu-item" data-degree="maestria">
+                <div class="edu-year">2024 — Actual</div>
+                <div>
+                  <div class="edu-degree">Maestría en Ciencia de Datos e Inteligencia Artificial</div>
+                  <div class="edu-institution">Universidad Autónoma de Santo Domingo (UASD)</div>
+                </div>
+              </div>
+              <div class="edu-item" data-degree="ingenieria">
+                <div class="edu-year">2008 — 2014</div>
+                <div>
+                  <div class="edu-degree">Ingeniería en Informática</div>
+                  <div class="edu-institution">Universidad Tecnológica de Santiago (UTESA)</div>
+                </div>
+              </div>
+              <div class="edu-item" data-degree="diplomado-1">
+                <div class="edu-year">2023</div>
+                <div>
+                  <div class="edu-degree">Diplomado en Auditoría Forense Aplicada a la Prevención e Investigación de Delitos Financieros</div>
+                  <div class="edu-institution">SIANA Graduate School</div>
+                </div>
+              </div>
+              <div class="edu-item" data-degree="diplomado-2">
+                <div class="edu-year">2022</div>
+                <div>
+                  <div class="edu-degree">Auditoría Interna Basada en Riesgo</div>
+                  <div class="edu-institution">Instituto de Auditores Internos de la RD (IAI-RD)</div>
+                </div>
+              </div>
+              <div class="edu-item" data-degree="diplomado-3">
+                <div class="edu-year">2022</div>
+                <div>
+                  <div class="edu-degree">Diplomado en Ciberseguridad y Ciberdefensa</div>
+                  <div class="edu-institution">UNADE – Universidad Nacional para la Defensa, Ministerio de Defensa RD</div>
+                </div>
+              </div>
+              <div class="edu-item" data-degree="diplomado-4">
+                <div class="edu-year">2021</div>
+                <div>
+                  <div class="edu-degree">Diplomado Power BI e Inteligencia de Negocios</div>
+                  <div class="edu-institution">SIENA Graduate School</div>
+                </div>
+              </div>
+              <div class="edu-item" data-degree="diplomado-5">
+                <div class="edu-year">2019</div>
+                <div>
+                  <div class="edu-degree">Diplomado Big Data & Business Intelligence</div>
+                  <div class="edu-institution">Universidad Autónoma de Santo Domingo (UASD)</div>
+                </div>
+              </div>
+              <div class="edu-item" data-degree="diplomado-6">
+                <div class="edu-year">2017</div>
+                <div>
+                  <div class="edu-degree">Diplomado en Desarrollo de Aplicaciones para Dispositivos Móviles</div>
+                  <div class="edu-institution">Universidad Tecnológica de Santiago (UTESA)</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CERTIFICATIONS SECTION -->
+          <section id="certificaciones" data-section="certifications">
+            <div class="section-header">
+              <span class="section-number">08</span>
+              <h2 class="section-title">Certificaciones</h2>
+            </div>
+            <div class="cert-grid" data-certifications="list">
+              <div class="cert-card" data-cert="ds4b-2024">
+                <div class="cert-year">2024</div>
+                <div class="cert-name">Tu Primera Semana como Data Scientist</div>
+                <div class="cert-issuer">DS4B · Data Science for Business</div>
+              </div>
+
+              <div class="cert-card" data-cert="powerbi-2022">
+                <div class="cert-year">2022</div>
+                <div class="cert-name">Indicadores Claves de Desempeño con Power BI</div>
+                <div class="cert-issuer">Universidad Politécnica Territorial del Estado Aragua (UPT)</div>
+              </div>
+
+              <div class="cert-card" data-cert="cybersecurity-2022">
+                <div class="cert-year">2022</div>
+                <div class="cert-name">Concientización sobre Seguridad Cibernética y de la Información</div>
+                <div class="cert-issuer">Academia Banreservas</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CONTACT SECTION -->
+          <section id="contacto" data-section="contact">
+            <div class="section-header">
+              <span class="section-number">09</span>
+              <h2 class="section-title">Contacto</h2>
+            </div>
+
+            <div class="section-inner" style="max-width: 600px; margin: 0 auto;">
+              <!-- Contact Form -->
+              <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" data-form="contact" novalidate>
+
+                <!-- Name Field -->
+                <div class="form-group" data-field="name">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="form-input"
+                    placeholder="Tu nombre completo"
+                    data-validate="required"
+                  >
+                  <div class="form-error" data-error="name"></div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group" data-field="email">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="_replyto"
+                    required
+                    class="form-input"
+                    placeholder="tu.email@ejemplo.com"
+                    data-validate="required,email"
+                  >
+                  <div class="form-error" data-error="email"></div>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="form-group" data-field="subject">
+                  <label for="subject" class="form-label">Asunto</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="_subject"
+                    required
+                    class="form-input"
+                    placeholder="¿Cuál es tu asunto?"
+                    data-validate="required"
+                  >
+                  <div class="form-error" data-error="subject"></div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group" data-field="message">
+                  <label for="message" class="form-label">Mensaje</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="form-textarea"
+                    placeholder="Cuéntame más sobre tu proyecto..."
+                    data-validate="required"
+                  ></textarea>
+                  <div class="form-error" data-error="message"></div>
+                </div>
+
+                <!-- Form Status Messages -->
+                <div class="form-status" data-status="success" style="display: none;">
+                  <div class="status-message status-success">
+                    ¡Mensaje enviado con éxito! Te responderé pronto.
+                  </div>
+                </div>
+
+                <div class="form-status" data-status="error" style="display: none;">
+                  <div class="status-message status-error">
+                    Hubo un error al enviar el mensaje. Por favor intenta de nuevo.
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="width: 100%; justify-content: center; margin-top: 1rem;"
+                  data-action="submit-form"
+                >
+                  Enviar mensaje
+                </button>
+
+                <!-- Additional hidden field for Formspree -->
+                <input type="hidden" name="_captcha" value="false">
+              </form>
+
+              <!-- Alternative Contact Methods -->
+              <div class="contact-alternatives" data-section="alternatives" style="margin-top: 2rem; text-align: center; color: #888580;">
+                <p>O contáctame directamente:</p>
+                <div class="contact-links">
+                  <a href="mailto:norman.carrasco@hotmail.com" class="contact-method">
+                    <span>Email</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/nocarrasco" target="_blank" class="contact-method">
+                    <span>LinkedIn</span>
+                  </a>
+                  <a href="https://github.com/NCarrasco" target="_blank" class="contact-method">
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
         </main>
 
         <!-- Footer -->
-        <footer id="footer" class="footer"></footer>
+        <footer id="footer" class="footer">
+          <!-- Footer Name/Brand -->
+          <div class="footer-name">Norman Carrasco</div>
+
+          <!-- Social & Quick Links -->
+          <div class="footer-links" data-links="social">
+            <a href="https://github.com/NCarrasco" target="_blank" rel="noopener noreferrer" data-social="github">GitHub</a>
+            <a href="https://www.linkedin.com/in/nocarrasco" target="_blank" rel="noopener noreferrer" data-social="linkedin">LinkedIn</a>
+            <a href="https://apren2tics.wordpress.com" target="_blank" rel="noopener noreferrer" data-social="blog">Blog</a>
+            <a href="mailto:norman.carrasco@hotmail.com" data-social="email">Email</a>
+          </div>
+
+          <!-- GitHub & LinkedIn Badges -->
+          <div class="footer-badges" data-badges="stats">
+            <a href="https://github.com/NCarrasco" target="_blank" rel="noopener noreferrer" data-badge="github-followers">
+              <img alt="GitHub followers" src="https://img.shields.io/github/followers/NCarrasco?style=flat-square&color=1a1917">
+            </a>
+            <a href="https://github.com/NCarrasco?tab=repositories" target="_blank" rel="noopener noreferrer" data-badge="github-repos">
+              <img alt="GitHub repos" src="https://img.shields.io/badge/Public%20Repos-22-1a1917?style=flat-square">
+            </a>
+            <a href="https://www.linkedin.com/in/nocarrasco" target="_blank" rel="noopener noreferrer" data-badge="linkedin">
+              <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Connected-0077B5?style=flat-square">
+            </a>
+          </div>
+
+          <!-- Copyright & Legal -->
+          <div class="footer-copy" data-copyright="info">
+            © 2026 Norman Carrasco · Santo Domingo, República Dominicana
+          </div>
+
+          <!-- Optional: Legal Links -->
+          <div class="footer-legal" data-legal="links" style="margin-top: 1rem; font-size: 0.875rem;">
+            <a href="#" data-legal="privacy">Privacidad</a>
+            <span>·</span>
+            <a href="#" data-legal="terms">Términos</a>
+          </div>
+        </footer>
     </div>
 
     <!-- Scripts -->

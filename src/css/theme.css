@@ -1,0 +1,59 @@
+/* ── THEME VARIABLES ──
+   Dark mode overrides using the same variable names as styles.css
+   Applied when <html> has class 'dark-theme'
+*/
+
+:root {
+  --transition-theme: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark theme color overrides */
+html.dark-theme {
+  --white: #1a1917;
+  --off-white: #222120;
+  --light: #2a2927;
+  --mid: #3a3835;
+  --text-muted: #9a9590;
+  --text: #f0eeea;
+  --accent: #f0eeea;
+  --accent-warm: #e05545;
+}
+
+/* Apply smooth transitions to themed elements */
+body,
+nav,
+.nav-logo,
+.nav-links a,
+.section-inner,
+section,
+.card,
+.skill-bar-bg,
+.testimonial-card,
+.project-card,
+.cert-card,
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.footer {
+  transition: var(--transition-theme);
+}
+
+/* Dark theme: nav background */
+html.dark-theme nav {
+  background: rgba(26, 25, 23, 0.92);
+  border-bottom-color: var(--light);
+}
+
+/* Dark theme: form inputs */
+html.dark-theme input,
+html.dark-theme textarea,
+html.dark-theme select {
+  background-color: var(--light);
+  color: var(--text);
+  border-color: var(--mid);
+}
+
+html.dark-theme input::placeholder,
+html.dark-theme textarea::placeholder {
+  color: var(--text-muted);
+}
