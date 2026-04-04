@@ -729,27 +729,45 @@ footer {
   nav {
     padding: 1rem 1.5rem;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
   .nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
   }
   .nav-links a {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
   }
   .hero {
     grid-template-columns: 1fr;
     padding: 6rem 1.5rem 3rem;
     gap: 3rem;
   }
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
   .hero-name {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-size: clamp(2.5rem, 9vw, 4rem);
   }
   .hero-tagline {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
   }
   .hero-right { align-items: flex-start; }
   .hero-stats { max-width: 100%; }
@@ -758,7 +776,10 @@ footer {
   .about-photo {
     position: static;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 1rem;
   }
   .about-photo-frame {
     width: 220px;
@@ -772,9 +793,18 @@ footer {
     object-position: center center;
     border-radius: 50%;
   }
+  .about-photo-name,
+  .about-photo-title {
+    text-align: center;
+    width: 100%;
+  }
+  .about-details {
+    width: 100%;
+  }
   .projects-grid { grid-template-columns: 1fr; }
   .project-card-featured { grid-column: 1; }
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; width: 100%; }
+  .testimonial-card { width: 100%; min-width: 0; }
   .stack-grid { grid-template-columns: 1fr 1fr; }
   .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .skills-grid { grid-template-columns: 1fr; }
