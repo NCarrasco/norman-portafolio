@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if we ever add npm/build tools)
+node_modules/
+package-lock.json
+yarn.lock
+dist/
+build/
+
+# Misc
+.env
+.env.local
+*.log

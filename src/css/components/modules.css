@@ -1,0 +1,397 @@
+/* ===================================================================
+   MODULES.CSS - Styles for JavaScript Modules
+   Contains styles for search, filters, and animations
+   =================================================================== */
+
+/* ====== FILTER MODULE STYLES ====== */
+
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  padding: var(--spacing-4);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.filter-category {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.filter-category-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-muted);
+  margin: 0;
+  padding: 0;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.filter-btn {
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base) ease-in-out;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.filter-btn.active {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: 0 0 0 2px var(--color-bg-primary),
+    0 0 0 4px var(--color-accent);
+}
+
+.filter-reset-btn {
+  align-self: flex-start;
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base) ease-in-out;
+}
+
+.filter-reset-btn:hover {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.filter-counter {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: var(--spacing-2) 0;
+}
+
+/* Filter visibility classes */
+.filter-visible {
+  display: block;
+  opacity: 1;
+}
+
+.filter-hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* ====== SEARCH MODULE STYLES ====== */
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 var(--spacing-2);
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base) ease-in-out;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-input:focus {
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + var(--spacing-1));
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-dropdown);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color var(--transition-fast) ease-in-out;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover,
+.search-result-item.selected {
+  background-color: var(--color-bg-secondary);
+}
+
+.search-result-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+.search-result-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  word-break: break-word;
+}
+
+.search-result-title mark {
+  background-color: rgba(249, 115, 22, 0.3);
+  color: inherit;
+  font-weight: var(--font-weight-bold);
+  padding: 0 2px;
+}
+
+.search-result-snippet {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-snug);
+  word-break: break-word;
+}
+
+.search-result-snippet mark {
+  background-color: rgba(79, 70, 229, 0.3);
+  color: inherit;
+  font-weight: var(--font-weight-medium);
+  padding: 0 2px;
+}
+
+.search-no-results {
+  padding: var(--spacing-4);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Accessibility - live region for screen readers */
+.search-live-region {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ====== ANIMATION DATA ATTRIBUTES ====== */
+
+/* Elements with data-animate attribute */
+[data-animate] {
+  will-change: opacity, transform;
+}
+
+/* Parallax element */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* Counter elements */
+[data-counter-target] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ====== RESPONSIVE ADJUSTMENTS ====== */
+
+@media (max-width: 768px) {
+  .filter-controls {
+    padding: var(--spacing-3);
+    gap: var(--spacing-3);
+  }
+
+  .filter-buttons {
+    gap: var(--spacing-1);
+  }
+
+  .filter-btn {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--font-size-xs);
+  }
+
+  .search-container {
+    max-width: 100%;
+    margin: var(--spacing-2) 0;
+  }
+
+  .search-dropdown {
+    max-height: 300px;
+  }
+
+  .search-result-item {
+    padding: var(--spacing-2);
+    gap: var(--spacing-2);
+  }
+
+  .search-result-snippet {
+    font-size: var(--font-size-2xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-controls {
+    padding: var(--spacing-2);
+    gap: var(--spacing-2);
+  }
+
+  .filter-buttons {
+    gap: var(--spacing-1);
+    row-gap: var(--spacing-2);
+  }
+
+  .filter-btn {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--font-size-xs);
+    flex: 0 1 auto;
+  }
+
+  .search-container {
+    margin: var(--spacing-1) 0;
+  }
+
+  .search-input {
+    padding: var(--spacing-2) var(--spacing-2);
+    font-size: var(--font-size-sm);
+  }
+
+  .search-result-item {
+    padding: var(--spacing-2);
+  }
+
+  .search-result-title {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* ====== ANIMATION STATE CLASSES ====== */
+
+/* Used by animations.js for visual feedback */
+.animate-fade-in-up {
+  animation: fadeInUp var(--transition-base) ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp var(--transition-base) ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--transition-base) ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+
+/* Loading state for animations */
+.animate-loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ====== REDUCED MOTION SUPPORT ====== */
+
+@media (prefers-reduced-motion: reduce) {
+  .filter-btn,
+  .filter-reset-btn,
+  .search-input,
+  .search-result-item,
+  [data-animate],
+  [data-parallax] {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .filter-hidden {
+    display: none;
+    opacity: 0;
+  }
+
+  .filter-visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* ====== HIGH CONTRAST MODE ====== */
+
+@media (prefers-contrast: more) {
+  .filter-btn {
+    border-width: var(--border-width-base);
+  }
+
+  .filter-btn.active {
+    border-width: var(--border-width-thick);
+  }
+
+  .search-input {
+    border-width: var(--border-width-base);
+  }
+
+  .search-input:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .search-result-item:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+  }
+}

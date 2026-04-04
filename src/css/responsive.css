@@ -1,0 +1,575 @@
+/* ===================================================================
+   RESPONSIVE.CSS - Mobile-first Responsive Design
+   Media queries and responsive typography/spacing
+   =================================================================== */
+
+/* ===================================================================
+   BREAKPOINTS
+   Mobile-first approach: base styles apply to all, then override
+   ===================================================================
+   sm: 640px  (not commonly used, for specific cases)
+   md: 768px  (tablet)
+   lg: 1024px (small desktop)
+   xl: 1200px (desktop)
+   2xl: 1536px (large desktop)
+=================================================================== */
+
+/* ---- TABLET (768px and up) ---- */
+@media (min-width: 768px) {
+  /* Root variables adjustments for tablet */
+  :root {
+    --container-padding: var(--spacing-6);
+  }
+
+  /* Typography scaling for tablet */
+  h1 {
+    font-size: var(--font-size-5xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-2xl);
+  }
+
+  p {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Tablet grid adjustments */
+  .grid-cols-1-tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-2-tablet {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-3-tablet {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* Tablet spacing adjustments */
+  .mt-tablet-6 {
+    margin-top: var(--spacing-6);
+  }
+
+  .mb-tablet-6 {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .px-tablet-6 {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+
+  .py-tablet-4 {
+    padding-top: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+  }
+
+  /* Tablet visibility */
+  .hidden-mobile {
+    display: block;
+  }
+
+  .hidden-tablet {
+    display: none;
+  }
+
+  /* Flex direction changes */
+  .flex-tablet-row {
+    flex-direction: row;
+  }
+
+  .flex-tablet-column {
+    flex-direction: column;
+  }
+}
+
+/* ---- DESKTOP (1024px and up) ---- */
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: var(--spacing-8);
+  }
+
+  /* Typography scaling for desktop */
+  h1 {
+    font-size: var(--font-size-6xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-5xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-3xl);
+  }
+
+  p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Desktop grid adjustments */
+  .grid-cols-1-desktop {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-2-desktop {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-3-desktop {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-4-desktop {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  /* Desktop spacing adjustments */
+  .mt-desktop-8 {
+    margin-top: var(--spacing-8);
+  }
+
+  .mb-desktop-8 {
+    margin-bottom: var(--spacing-8);
+  }
+
+  .px-desktop-8 {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+
+  .py-desktop-6 {
+    padding-top: var(--spacing-6);
+    padding-bottom: var(--spacing-6);
+  }
+
+  /* Desktop visibility */
+  .hidden-tablet-only {
+    display: block;
+  }
+
+  /* Flex direction changes */
+  .flex-desktop-row {
+    flex-direction: row;
+  }
+
+  .flex-desktop-column {
+    flex-direction: column;
+  }
+}
+
+/* ---- LARGE DESKTOP (1200px and up) ---- */
+@media (min-width: 1200px) {
+  :root {
+    --container-padding: var(--spacing-10);
+  }
+
+  h1 {
+    font-size: var(--font-size-6xl);
+    line-height: var(--line-height-tight);
+  }
+
+  h2 {
+    font-size: var(--font-size-5xl);
+    line-height: var(--line-height-tight);
+  }
+
+  /* Grid adjustments */
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .grid-cols-1-xl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-2-xl {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-3-xl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-4-xl {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* ---- EXTRA LARGE DESKTOP (1536px and up) ---- */
+@media (min-width: 1536px) {
+  :root {
+    --container-padding: var(--spacing-12);
+  }
+
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .grid-cols-1-2xl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-2-2xl {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-3-2xl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-4-2xl {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .grid-cols-5-2xl {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* ===================================================================
+   MOBILE-FIRST RESPONSIVE TYPOGRAPHY
+   Base sizes defined in variables.css, adjusted per breakpoint
+=================================================================== */
+
+@media (max-width: 767px) {
+  /* Mobile typography */
+  h1 {
+    font-size: var(--font-size-4xl);
+    line-height: var(--line-height-tight);
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-tight);
+  }
+
+  h3 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-snug);
+  }
+
+  h4 {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-snug);
+  }
+
+  h5,
+  h6 {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-normal);
+  }
+
+  p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+
+  small,
+  .text-sm {
+    font-size: var(--font-size-sm);
+  }
+
+  /* Mobile spacing defaults */
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  section {
+    padding: var(--spacing-4) 0;
+  }
+
+  /* Mobile containers */
+  .container {
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+  }
+
+  /* Mobile grid defaults */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-cols-auto-mobile {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide desktop elements on mobile */
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  .show-mobile {
+    display: block !important;
+  }
+
+  /* Mobile spacing utilities */
+  .mt-mobile-3 {
+    margin-top: var(--spacing-3);
+  }
+
+  .mb-mobile-3 {
+    margin-bottom: var(--spacing-3);
+  }
+
+  .px-mobile-3 {
+    padding-left: var(--spacing-3);
+    padding-right: var(--spacing-3);
+  }
+
+  .py-mobile-3 {
+    padding-top: var(--spacing-3);
+    padding-bottom: var(--spacing-3);
+  }
+
+  /* Stack flex items vertically on mobile */
+  .flex-stack-mobile {
+    flex-direction: column;
+  }
+
+  /* Full width buttons on mobile */
+  .w-full-mobile {
+    width: 100% !important;
+  }
+
+  /* Text alignment on mobile */
+  .text-center-mobile {
+    text-align: center;
+  }
+
+  .text-left-mobile {
+    text-align: left;
+  }
+}
+
+/* ===================================================================
+   LANDSCAPE ORIENTATION (Mobile Landscape)
+=================================================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Reduce vertical spacing in landscape mode on mobile */
+  section {
+    padding: var(--spacing-2) 0;
+  }
+
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .mt-mobile-3,
+  .mb-mobile-3 {
+    margin: var(--spacing-1) 0;
+  }
+}
+
+/* ===================================================================
+   PRINT STYLES
+=================================================================== */
+
+@media print {
+  /* Hide interactive elements when printing */
+  .no-print,
+  nav,
+  .navbar,
+  button,
+  a[href]::after {
+    display: none !important;
+  }
+
+  /* Optimize typography for print */
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  /* Page breaks */
+  section {
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* Ensure content is readable */
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+}
+
+/* ===================================================================
+   HIGH DPI / RETINA DISPLAYS
+=================================================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Adjust borders for high DPI displays */
+  .border {
+    border-width: 0.5px;
+  }
+
+  /* Improve text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ===================================================================
+   TOUCH DEVICE STYLES
+=================================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets on touch devices */
+  button,
+  a,
+  input[type='button'],
+  input[type='submit'] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Adjust spacing for touch interaction */
+  .gap-1 {
+    gap: var(--spacing-2);
+  }
+
+  /* Remove hover effects on touch devices where applicable */
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+/* ===================================================================
+   REDUCED MOTION MEDIA QUERY
+=================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===================================================================
+   DARK MODE MEDIA QUERY
+   Alternative to manual dark theme class
+=================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-theme) {
+    color-scheme: dark;
+    --color-white: #0f0f0f;
+    --color-off-white: #1a1a1a;
+    --color-light: #2a2a2a;
+    --color-mid: #3a3a3a;
+    --color-text: #f5f5f5;
+    --color-text-muted: #a0a0a0;
+    --color-bg-primary: #0f0f0f;
+    --color-bg-secondary: #1a1a1a;
+    --color-bg-tertiary: #2a2a2a;
+    --color-border: #3a3a3a;
+  }
+}
+
+/* ===================================================================
+   HIGH CONTRAST MODE
+=================================================================== */
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --shadow-sm: none;
+    --shadow-base: 0 0 0 1px currentColor;
+    --shadow-md: 0 0 0 2px currentColor;
+  }
+}
+
+/* ===================================================================
+   FORCED COLORS MODE (Windows High Contrast)
+=================================================================== */
+
+@media (forced-colors: active) {
+  button {
+    border: 1px solid;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  textarea {
+    border: 1px solid;
+  }
+
+  .shadow {
+    box-shadow: none;
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE CONTAINER QUERIES (Future-proof)
+   When container query support is widely available
+=================================================================== */
+
+@supports (container-type: inline-size) {
+  @container (min-width: 400px) {
+    .respond-to-container {
+      /* Styles when container is 400px or wider */
+    }
+  }
+
+  @container (min-width: 600px) {
+    .respond-to-container-md {
+      /* Styles when container is 600px or wider */
+    }
+  }
+
+  @container (min-width: 900px) {
+    .respond-to-container-lg {
+      /* Styles when container is 900px or wider */
+    }
+  }
+}

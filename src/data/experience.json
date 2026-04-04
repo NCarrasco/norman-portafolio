@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "company": "Banreservas",
+    "position": "Subgerente de Prevención Interna",
+    "startDate": "2024-07",
+    "endDate": null,
+    "description": "Liderazgo de equipo de 5 especialistas en monitoreo de transacciones y desarrollo de soluciones analíticas. Diseño e implementación de tableros de Business Intelligence en Power BI y reportería avanzada en ReportBuilder para el análisis de transacciones atípicas y la toma de decisiones estratégicas. Definición de reglas de negocio para la detección de actividades inusuales, liderando investigaciones con equipos multidisciplinarios y fortaleciendo los controles de prevención alineados con políticas internas y cumplimiento normativo."
+  },
+  {
+    "id": 2,
+    "company": "Banreservas",
+    "position": "Encargado de Prevención Interna",
+    "startDate": "2022-04",
+    "endDate": "2024-07",
+    "description": "Desarrollo de soluciones de análisis y tableros de Business Intelligence en Power BI y ReportBuilder orientados al monitoreo de transacciones atípicas y la toma de decisiones estratégicas. Diseño y documentación de reglas de negocio para la detección de actividades inusuales, liderando investigaciones internas con equipos multidisciplinarios y fortaleciendo los controles de prevención mediante reportería avanzada y análisis de comportamiento transaccional."
+  },
+  {
+    "id": 3,
+    "company": "Banreservas",
+    "position": "Analista de Datos",
+    "startDate": "2016-06",
+    "endDate": "2022-04",
+    "description": "Responsable del desarrollo y mantenimiento de reportes estratégicos para la continuidad del negocio, apoyando la toma de decisiones en áreas de clientes, productos y operaciones. Participé en la modernización de la infraestructura analítica del banco, incluyendo la transición de la herramienta ETL Datamanager a IBM DataStage, y en la puesta en producción del nuevo core bancario Signature. Desarrollé el aplicativo web \"Estado en Tarjeta de Crédito\" en .NET MVC, facilitando consultas en tiempo real para áreas operativas."
+  },
+  {
+    "id": 4,
+    "company": "Infosyp",
+    "position": "Analista de Desarrollo de Software",
+    "startDate": "2015-06",
+    "endDate": "2016-07",
+    "description": "Como consultor externo para Banreservas, lideré el desarrollo de webservices para la integración de aplicaciones y servicios internos y externos del banco. Participé activamente en el área de Banking, brindando soporte y desarrollando soluciones para las plataformas de Internet Banking web y mobile, contribuyendo a la estabilidad y evolución tecnológica de los canales digitales del banco."
+  },
+  {
+    "id": 5,
+    "company": "Ministerio de Obras Públicas y Comunicaciones",
+    "position": "Analista de Desarrollo de Software",
+    "startDate": "2014-11",
+    "endDate": "2015-01",
+    "description": "Desarrollé e implementé servicios web que facilitaron la interoperabilidad entre los sistemas del Ministerio y las plataformas digitales del Estado dominicano, en coordinación con la Oficina Gubernamental de Tecnologías de la Información y Comunicación (OGTIC). Esta experiencia permitió aplicar estándares de integración a nivel institucional en entornos de gobierno electrónico."
+  }
+]

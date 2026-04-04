@@ -1,0 +1,582 @@
+/* ===================================================================
+   GRID.CSS - Grid System & Layout Helpers
+   Grid container, columns, gaps, and responsive grid behavior
+   =================================================================== */
+
+/* ---- GRID CONTAINER ---- */
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+.grid.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid.auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* ---- GRID COLUMNS ---- */
+.grid.cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid.cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid.cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid.cols-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* ---- GRID ROWS ---- */
+.grid.rows-1 {
+  grid-template-rows: 1fr;
+}
+
+.grid.rows-2 {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid.rows-3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid.rows-4 {
+  grid-template-rows: repeat(4, 1fr);
+}
+
+/* ---- GRID GAPS ---- */
+.grid.gap-0 {
+  gap: var(--spacing-0);
+}
+
+.grid.gap-1 {
+  gap: var(--spacing-1);
+}
+
+.grid.gap-2 {
+  gap: var(--spacing-2);
+}
+
+.grid.gap-3 {
+  gap: var(--spacing-3);
+}
+
+.grid.gap-4 {
+  gap: var(--spacing-4);
+}
+
+.grid.gap-6 {
+  gap: var(--spacing-6);
+}
+
+.grid.gap-8 {
+  gap: var(--spacing-8);
+}
+
+.grid.gap-10 {
+  gap: var(--spacing-10);
+}
+
+.grid.gap-12 {
+  gap: var(--spacing-12);
+}
+
+/* Horizontal gap only */
+.grid.gap-x-0 {
+  column-gap: var(--spacing-0);
+}
+
+.grid.gap-x-2 {
+  column-gap: var(--spacing-2);
+}
+
+.grid.gap-x-4 {
+  column-gap: var(--spacing-4);
+}
+
+.grid.gap-x-6 {
+  column-gap: var(--spacing-6);
+}
+
+.grid.gap-x-8 {
+  column-gap: var(--spacing-8);
+}
+
+/* Vertical gap only */
+.grid.gap-y-0 {
+  row-gap: var(--spacing-0);
+}
+
+.grid.gap-y-2 {
+  row-gap: var(--spacing-2);
+}
+
+.grid.gap-y-4 {
+  row-gap: var(--spacing-4);
+}
+
+.grid.gap-y-6 {
+  row-gap: var(--spacing-6);
+}
+
+.grid.gap-y-8 {
+  row-gap: var(--spacing-8);
+}
+
+/* ---- GRID COLUMN SPAN ---- */
+.col-span-1 {
+  grid-column: span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+.col-span-5 {
+  grid-column: span 5;
+}
+
+.col-span-6 {
+  grid-column: span 6;
+}
+
+.col-span-7 {
+  grid-column: span 7;
+}
+
+.col-span-8 {
+  grid-column: span 8;
+}
+
+.col-span-9 {
+  grid-column: span 9;
+}
+
+.col-span-10 {
+  grid-column: span 10;
+}
+
+.col-span-11 {
+  grid-column: span 11;
+}
+
+.col-span-12 {
+  grid-column: span 12;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+/* ---- GRID ROW SPAN ---- */
+.row-span-1 {
+  grid-row: span 1;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
+
+.row-span-3 {
+  grid-row: span 3;
+}
+
+.row-span-4 {
+  grid-row: span 4;
+}
+
+.row-span-5 {
+  grid-row: span 5;
+}
+
+.row-span-6 {
+  grid-row: span 6;
+}
+
+.row-span-full {
+  grid-row: 1 / -1;
+}
+
+/* ---- GRID AUTO FLOW ---- */
+.grid.auto-cols-auto {
+  grid-auto-columns: auto;
+}
+
+.grid.auto-cols-fr {
+  grid-auto-columns: 1fr;
+}
+
+.grid.auto-cols-max {
+  grid-auto-columns: max-content;
+}
+
+.grid.auto-cols-min {
+  grid-auto-columns: min-content;
+}
+
+.grid.auto-rows-auto {
+  grid-auto-rows: auto;
+}
+
+.grid.auto-rows-fr {
+  grid-auto-rows: 1fr;
+}
+
+.grid.auto-rows-max {
+  grid-auto-rows: max-content;
+}
+
+.grid.auto-rows-min {
+  grid-auto-rows: min-content;
+}
+
+/* ---- GRID ALIGNMENT ---- */
+/* Justify Content (horizontal) */
+.grid.justify-start {
+  justify-content: start;
+}
+
+.grid.justify-end {
+  justify-content: end;
+}
+
+.grid.justify-center {
+  justify-content: center;
+}
+
+.grid.justify-between {
+  justify-content: space-between;
+}
+
+.grid.justify-around {
+  justify-content: space-around;
+}
+
+.grid.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.grid.justify-stretch {
+  justify-content: stretch;
+}
+
+/* Align Content (vertical) */
+.grid.align-start {
+  align-content: start;
+}
+
+.grid.align-end {
+  align-content: end;
+}
+
+.grid.align-center {
+  align-content: center;
+}
+
+.grid.align-between {
+  align-content: space-between;
+}
+
+.grid.align-around {
+  align-content: space-around;
+}
+
+.grid.align-evenly {
+  align-content: space-evenly;
+}
+
+.grid.align-stretch {
+  align-content: stretch;
+}
+
+/* Justify Items (horizontal cell alignment) */
+.grid.items-start {
+  justify-items: start;
+}
+
+.grid.items-end {
+  justify-items: end;
+}
+
+.grid.items-center {
+  justify-items: center;
+}
+
+.grid.items-stretch {
+  justify-items: stretch;
+}
+
+/* Align Items (vertical cell alignment) */
+.grid.content-start {
+  align-items: start;
+}
+
+.grid.content-end {
+  align-items: end;
+}
+
+.grid.content-center {
+  align-items: center;
+}
+
+.grid.content-stretch {
+  align-items: stretch;
+}
+
+/* ---- GRID ITEM ALIGNMENT ---- */
+.grid-item.justify-self-start {
+  justify-self: start;
+}
+
+.grid-item.justify-self-end {
+  justify-self: end;
+}
+
+.grid-item.justify-self-center {
+  justify-self: center;
+}
+
+.grid-item.justify-self-stretch {
+  justify-self: stretch;
+}
+
+.grid-item.align-self-start {
+  align-self: start;
+}
+
+.grid-item.align-self-end {
+  align-self: end;
+}
+
+.grid-item.align-self-center {
+  align-self: center;
+}
+
+.grid-item.align-self-stretch {
+  align-self: stretch;
+}
+
+/* ---- MASONRY GRID ---- */
+.grid.masonry {
+  column-count: 3;
+  column-gap: var(--spacing-6);
+}
+
+.grid.masonry-item {
+  break-inside: avoid;
+  margin-bottom: var(--spacing-6);
+}
+
+/* ---- SUBGRID (CSS Grid Level 2) ---- */
+.grid.subgrid {
+  display: grid;
+}
+
+.grid.subgrid > * {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+/* ---- GRID RESPONSIVE ---- */
+@media (max-width: 1023px) {
+  .grid.cols-4,
+  .grid.cols-5,
+  .grid.cols-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid.auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .col-span-4,
+  .col-span-5,
+  .col-span-6 {
+    grid-column: span 2;
+  }
+
+  .grid.masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid.cols-2,
+  .grid.cols-3,
+  .grid.cols-4,
+  .grid.cols-5,
+  .grid.cols-6,
+  .grid.auto-fit,
+  .grid.auto-fill {
+    grid-template-columns: 1fr;
+  }
+
+  .col-span-2,
+  .col-span-3,
+  .col-span-4,
+  .col-span-5,
+  .col-span-6,
+  .col-span-full {
+    grid-column: span 1;
+  }
+
+  .grid.gap-4,
+  .grid.gap-6,
+  .grid.gap-8 {
+    gap: var(--spacing-3);
+  }
+
+  .grid.masonry {
+    column-count: 1;
+  }
+}
+
+/* ---- FLEX UTILITIES (Complementary) ---- */
+.flex {
+  display: flex;
+}
+
+.flex.row {
+  flex-direction: row;
+}
+
+.flex.column {
+  flex-direction: column;
+}
+
+.flex.wrap {
+  flex-wrap: wrap;
+}
+
+.flex.nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Flex items */
+.flex-item {
+  flex: 1;
+  min-width: 0;
+}
+
+.flex-item.grow {
+  flex-grow: 1;
+}
+
+.flex-item.shrink {
+  flex-shrink: 1;
+}
+
+.flex-item.grow-0 {
+  flex-grow: 0;
+}
+
+.flex-item.shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-item.basis-auto {
+  flex-basis: auto;
+}
+
+.flex-item.basis-0 {
+  flex-basis: 0%;
+}
+
+/* ---- CONTAINER QUERIES (Future) ---- */
+@supports (container-type: inline-size) {
+  .grid.responsive-container {
+    container-type: inline-size;
+  }
+
+  @container (min-width: 300px) {
+    .grid.responsive-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @container (min-width: 500px) {
+    .grid.responsive-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @container (min-width: 800px) {
+    .grid.responsive-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @container (min-width: 1200px) {
+    .grid.responsive-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+/* ---- ACCESSIBILITY ---- */
+.grid.no-gap {
+  gap: 0;
+}
+
+.grid.sr-only-label [role='label'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ---- LAYOUT HELPERS ---- */
+.grid.fullscreen {
+  height: 100vh;
+}
+
+.grid.square {
+  aspect-ratio: 1 / 1;
+}
+
+.grid.video {
+  aspect-ratio: 16 / 9;
+}
+
+/* ---- PRINT STYLES ---- */
+@media print {
+  .grid {
+    page-break-inside: avoid;
+  }
+
+  .grid-item {
+    page-break-inside: avoid;
+  }
+}

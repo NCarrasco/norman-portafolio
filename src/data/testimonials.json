@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "author": "Bienvenido Cuevas",
+    "role": "CEO & General Manager",
+    "company": "SOLFITE, SRL",
+    "text": "He tenido el privilegio de trabajar con Norman en varios proyectos y su desempeño siempre ha superado las expectativas. Su dedicación al trabajo es ejemplar, demostrando no solo un compromiso profundo con sus responsabilidades, sino también una notable habilidad para manejar tareas complejas y plazos ajustados.",
+    "image": null
+  },
+  {
+    "id": 2,
+    "author": "Alberto Poy",
+    "role": "Especialista en Investigaciones Electrónicas y Fraude Financiero",
+    "company": "Prevención del Fraude",
+    "text": "Tuve el placer de trabajar con Norman y puedo decir con certeza que es un líder excepcional. Su capacidad para resolver problemas de manera eficiente y su enfoque en el desarrollo del equipo lo convierten en un profesional destacado.",
+    "image": null
+  },
+  {
+    "id": 3,
+    "author": "Elvin Matos",
+    "role": "Especialista en Prevención Interna",
+    "company": "Prevención del Fraude",
+    "text": "Actualmente, trabajo bajo la supervisión del Sr. Norman en el área de Prevención Interna. Su liderazgo y visión estratégica han sido clave tanto para mi crecimiento profesional como para el del equipo, contribuyendo al logro de nuestros objetivos.",
+    "image": null
+  },
+  {
+    "id": 4,
+    "author": "Francisco Alberto Terrero Ramírez",
+    "role": "Data Governance | Data Analyst",
+    "company": "SQL Server | Oracle | Power BI",
+    "text": "Norman como compañero de trabajo es excelente. Es muy proactivo y sabe escuchar y hablar con los demás, tiene buena disposición y se enfoca en resolver sus asignaciones. Su expertise en análisis de datos y su actitud colaborativa lo convierten en un profesional muy valioso para cualquier equipo.",
+    "image": null
+  },
+  {
+    "id": 5,
+    "author": "Daniel Abreu González",
+    "role": "Full Stack Developer",
+    "company": "Co-Founder at Syner X",
+    "text": "Trabajar con Norman fue una experiencia enriquecedora y motivadora. Su profesionalismo y dedicación quedaron claros desde el primer momento, pero lo que realmente destaca es su capacidad para liderar equipos con empatía y visión estratégica.",
+    "image": null
+  },
+  {
+    "id": 6,
+    "author": "Carolina Orozco Méndez",
+    "role": "Economista",
+    "company": "Universidad Autónoma de Santo Domingo",
+    "text": "Norman tiene un talento único para conectar con las personas, entender sus fortalezas y guiarlas hacia objetivos comunes siempre con un enfoque colaborativo y respetuoso. Su liderazgo inspirador marcó una diferencia tangible en el desempeño del equipo.",
+    "image": null
+  }
+]

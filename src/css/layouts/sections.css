@@ -1,0 +1,433 @@
+/* ===================================================================
+   SECTIONS.CSS - Section Layout Styles
+   Section containers, spacing, backgrounds, titles, and organization
+   =================================================================== */
+
+/* ---- SECTION CONTAINER ---- */
+section,
+.section {
+  width: 100%;
+  padding: var(--spacing-8) 0;
+  position: relative;
+}
+
+section.section-sm,
+.section.sm {
+  padding: var(--spacing-4) 0;
+}
+
+section.section-md,
+.section.md {
+  padding: var(--spacing-6) 0;
+}
+
+section.section-lg,
+.section.lg {
+  padding: var(--spacing-10) 0;
+}
+
+section.section-xl,
+.section.xl {
+  padding: var(--spacing-12) 0;
+}
+
+/* ---- SECTION BACKGROUNDS ---- */
+section.bg-white,
+.section.bg-white {
+  background-color: var(--color-white);
+}
+
+section.bg-off-white,
+.section.bg-off-white {
+  background-color: var(--color-off-white);
+}
+
+section.bg-light,
+.section.bg-light {
+  background-color: var(--color-light);
+}
+
+section.bg-primary,
+.section.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+section.bg-secondary,
+.section.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+section.bg-gradient,
+.section.bg-gradient {
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+}
+
+section.bg-accent-gradient,
+.section.bg-accent-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-warm) 100%);
+  color: white;
+}
+
+section.bg-accent-gradient h1,
+section.bg-accent-gradient h2,
+section.bg-accent-gradient h3,
+.section.bg-accent-gradient h1,
+.section.bg-accent-gradient h2,
+.section.bg-accent-gradient h3 {
+  color: white;
+}
+
+section.bg-accent-gradient p,
+.section.bg-accent-gradient p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Alternating background pattern */
+section:nth-child(odd),
+.section:nth-child(odd) {
+  background-color: var(--color-bg-primary);
+}
+
+section:nth-child(even),
+.section:nth-child(even) {
+  background-color: var(--color-bg-secondary);
+}
+
+/* ---- SECTION OVERLAY PATTERNS ---- */
+.section.with-pattern {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="dots" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="rgba(79,70,229,0.05)"/></pattern></defs><rect width="1200" height="600" fill="currentColor"/><rect width="1200" height="600" fill="url(%23dots)"/></svg>');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.section.with-grid {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(79,70,229,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="currentColor"/><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ---- SECTION BORDER ---- */
+.section.border-top {
+  border-top: var(--border-width-thin) solid var(--color-border);
+}
+
+.section.border-bottom {
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+.section.border-both {
+  border-top: var(--border-width-thin) solid var(--color-border);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+/* ---- SECTION TITLES ---- */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-4) 0;
+  line-height: var(--line-height-tight);
+}
+
+.section-title.large {
+  font-size: var(--font-size-6xl);
+}
+
+.section-title.small {
+  font-size: var(--font-size-4xl);
+}
+
+.section-title strong {
+  color: var(--color-accent);
+}
+
+.section-title .highlight {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- SECTION SUBTITLE ---- */
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin: 0 0 var(--spacing-8) 0;
+}
+
+/* ---- SECTION HEADER ---- */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-10);
+  position: relative;
+}
+
+.section-header.left {
+  text-align: left;
+  max-width: 100%;
+}
+
+.section-header.right {
+  text-align: right;
+  margin-left: auto;
+}
+
+.section-header-decoration {
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-warm));
+  margin-bottom: var(--spacing-3);
+  border-radius: var(--radius-full);
+}
+
+/* ---- SECTION CONTENT ---- */
+.section-content {
+  display: grid;
+  gap: var(--spacing-8);
+}
+
+.section-content.with-sidebar {
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-6);
+}
+
+.section-content.with-sidebar-left {
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-6);
+}
+
+.section-content.full-width {
+  grid-template-columns: 1fr;
+}
+
+/* ---- SECTION COLUMNS ---- */
+.section-columns-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-8);
+}
+
+.section-columns-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-8);
+}
+
+.section-columns-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-8);
+}
+
+/* ---- SECTION DIVIDER ---- */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border) 20%,
+    var(--color-border) 80%,
+    transparent
+  );
+  margin: var(--spacing-8) 0;
+}
+
+.section-divider.thick {
+  height: 2px;
+}
+
+.section-divider.with-text {
+  position: relative;
+  margin: var(--spacing-6) 0;
+}
+
+.section-divider-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-bg-primary);
+  padding: 0 var(--spacing-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ---- SECTION FEATURES ---- */
+.section-features {
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.section-feature {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.section-feature-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--font-size-2xl);
+}
+
+.section-feature-content {
+  flex: 1;
+}
+
+.section-feature-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.section-feature-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ---- SECTION ANIMATED BACKGROUND ---- */
+section.animated-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+section.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  animation: float 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+section.animated-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ---- SECTION SPACERS ---- */
+.section-spacer-sm {
+  height: var(--spacing-4);
+}
+
+.section-spacer-md {
+  height: var(--spacing-6);
+}
+
+.section-spacer-lg {
+  height: var(--spacing-10);
+}
+
+.section-spacer-xl {
+  height: var(--spacing-12);
+}
+
+/* ---- SECTION RESPONSIVE ---- */
+@media (max-width: 1023px) {
+  section,
+  .section {
+    padding: var(--spacing-6) 0;
+  }
+
+  .section-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .section-columns-3,
+  .section-columns-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-content.with-sidebar,
+  .section-content.with-sidebar-left {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  section,
+  .section {
+    padding: var(--spacing-4) 0;
+  }
+
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .section-columns-2,
+  .section-columns-3,
+  .section-columns-4 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .section-feature {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .section-feature-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .section-divider {
+    margin: var(--spacing-4) 0;
+  }
+}
+
+/* ---- DARK MODE ---- */
+:root.dark-theme .section.bg-white {
+  background-color: var(--color-bg-primary);
+}
+
+:root.dark-theme .section.bg-off-white {
+  background-color: var(--color-bg-secondary);
+}
+
+:root.dark-theme .section.bg-light {
+  background-color: var(--color-light);
+}
+
+:root.dark-theme .section-divider-text {
+  background-color: var(--color-bg-primary);
+}

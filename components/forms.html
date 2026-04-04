@@ -1,0 +1,115 @@
+<!-- CONTACT SECTION -->
+<section id="contacto" data-section="contact">
+  <div class="section-header">
+    <span class="section-number">09</span>
+    <h2 class="section-title">Contacto</h2>
+  </div>
+
+  <div class="section-inner" style="max-width: 600px; margin: 0 auto;">
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" data-form="contact" novalidate>
+
+      <!-- Name Field -->
+      <div class="form-group" data-field="name">
+        <label for="name" class="form-label">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="form-input"
+          placeholder="Tu nombre completo"
+          data-validate="required"
+        >
+        <div class="form-error" data-error="name"></div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group" data-field="email">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="_replyto"
+          required
+          class="form-input"
+          placeholder="tu.email@ejemplo.com"
+          data-validate="required,email"
+        >
+        <div class="form-error" data-error="email"></div>
+      </div>
+
+      <!-- Subject Field -->
+      <div class="form-group" data-field="subject">
+        <label for="subject" class="form-label">Asunto</label>
+        <input
+          type="text"
+          id="subject"
+          name="_subject"
+          required
+          class="form-input"
+          placeholder="¿Cuál es tu asunto?"
+          data-validate="required"
+        >
+        <div class="form-error" data-error="subject"></div>
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group" data-field="message">
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="form-textarea"
+          placeholder="Cuéntame más sobre tu proyecto..."
+          data-validate="required"
+        ></textarea>
+        <div class="form-error" data-error="message"></div>
+      </div>
+
+      <!-- Form Status Messages -->
+      <div class="form-status" data-status="success" style="display: none;">
+        <div class="status-message status-success">
+          ¡Mensaje enviado con éxito! Te responderé pronto.
+        </div>
+      </div>
+
+      <div class="form-status" data-status="error" style="display: none;">
+        <div class="status-message status-error">
+          Hubo un error al enviar el mensaje. Por favor intenta de nuevo.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="width: 100%; justify-content: center; margin-top: 1rem;"
+        data-action="submit-form"
+      >
+        Enviar mensaje
+      </button>
+
+      <!-- Additional hidden field for Formspree -->
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+
+    <!-- Alternative Contact Methods -->
+    <div class="contact-alternatives" data-section="alternatives" style="margin-top: 2rem; text-align: center; color: #888580;">
+      <p>O contáctame directamente:</p>
+      <div class="contact-links">
+        <a href="mailto:norman.carrasco@hotmail.com" class="contact-method">
+          <span>Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/nocarrasco" target="_blank" class="contact-method">
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/NCarrasco" target="_blank" class="contact-method">
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

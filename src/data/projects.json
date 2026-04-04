@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "title": "Fraud Workflow Management",
+    "category": "Fraude",
+    "description": "Plataforma web para gestión de alertas operativas, asignación a analistas, control de estados y visibilidad ejecutiva con auditoría completa del ciclo del caso.",
+    "image": null,
+    "tags": [
+      "ASP.NET Core MVC",
+      ".NET 8",
+      "Bootstrap"
+    ],
+    "technologies": [
+      "ASP.NET Core MVC",
+      ".NET 8",
+      "Bootstrap"
+    ],
+    "featured": true,
+    "link": "https://github.com/NCarrasco/FRAUD-WORKFLOW-MANAGEMENT"
+  },
+  {
+    "id": 2,
+    "title": "Clasificación Matrícula Centros Educativos RD",
+    "category": "ML",
+    "description": "Predicción de alta/baja matrícula en 18,350 centros educativos dominicanos usando datos abiertos del Ministerio de Educación. Balance perfecto 50/50.",
+    "image": null,
+    "tags": [
+      "AUC-ROC 0.8443",
+      "Accuracy 77.14%",
+      "Random Forest"
+    ],
+    "technologies": [
+      "Random Forest",
+      "Machine Learning",
+      "Python"
+    ],
+    "featured": false,
+    "link": "https://github.com/NCarrasco/clasificacion-matricula-rd"
+  },
+  {
+    "id": 3,
+    "title": "Predicción Precios de Viviendas",
+    "category": "ML",
+    "description": "Modelo de regresión supervisada sobre House Prices Dataset (Ames, Iowa 2006–2010). Ridge Regression con 11 features de ingeniería seleccionado como modelo óptimo.",
+    "image": null,
+    "tags": [
+      "R² 0.9161",
+      "Ridge α=10",
+      "11 features"
+    ],
+    "technologies": [
+      "Ridge Regression",
+      "Python",
+      "Kaggle"
+    ],
+    "featured": false,
+    "link": "https://colab.research.google.com/drive/1n716uhElSucr2f9sEIzoLtjxJ8aOqCDY"
+  },
+  {
+    "id": 4,
+    "title": "Evaluación Riesgo de Abandono Laboral",
+    "category": "Análisis",
+    "description": "Análisis descriptivo del riesgo de abandono en Zona Franca de las Américas. 1,470 empleados, scoring de abandono, KPIs financieros y distribución por departamento.",
+    "image": null,
+    "tags": [
+      "Tasa 16.12%",
+      "USD$1.3M riesgo",
+      "1,470 registros"
+    ],
+    "technologies": [
+      "Python",
+      "Data Analysis",
+      "HR Analytics"
+    ],
+    "featured": false,
+    "link": "https://github.com/NCarrasco/riesgo-abandono-laboral"
+  },
+  {
+    "id": 5,
+    "title": "Análisis Desempeño Estudiantil OULAD",
+    "category": "ML",
+    "description": "Análisis avanzado del desempeño estudiantil con técnicas estadísticas y modelos de aprendizaje supervisado sobre el dataset abierto OULAD.",
+    "image": null,
+    "tags": [
+      "SVM",
+      "Redes Neurales",
+      "Regresión"
+    ],
+    "technologies": [
+      "SVM",
+      "Neural Networks",
+      "Regression",
+      "Python"
+    ],
+    "featured": false,
+    "link": "https://github.com/NCarrasco/oulad-analisis"
+  },
+  {
+    "id": 6,
+    "title": "StellaPay POS",
+    "category": "Backend",
+    "description": "Sistema de Punto de Venta integral con lógica de negocio compleja, manejo de transacciones y arquitectura orientada a la eficiencia operativa.",
+    "image": null,
+    "tags": [
+      "Python",
+      "BD Relacionales",
+      "Backend"
+    ],
+    "technologies": [
+      "Python",
+      "SQL",
+      "Backend",
+      "API"
+    ],
+    "featured": false,
+    "link": "https://github.com/NCarrasco/stellapay-pos"
+  }
+]

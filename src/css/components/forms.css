@@ -1,0 +1,453 @@
+/* ===================================================================
+   FORMS.CSS - Form Component Styles
+   Form containers, inputs, validation states, and feedback
+   =================================================================== */
+
+/* ---- FORM CONTAINER ---- */
+.form {
+  width: 100%;
+}
+
+.form-container {
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-base);
+}
+
+.form-container.large {
+  max-width: 600px;
+}
+
+.form-container.medium {
+  max-width: 500px;
+}
+
+.form-container.small {
+  max-width: 400px;
+}
+
+/* ---- FORM GROUP ---- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group.inline {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--spacing-3);
+}
+
+.form-group.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.form-group.row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+}
+
+/* ---- FORM LABELS ---- */
+.form-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  display: block;
+  margin-bottom: var(--spacing-1);
+}
+
+.form-label-required::after {
+  content: ' *';
+  color: var(--color-error);
+}
+
+.form-label-description {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-1);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ---- INPUT FIELDS ---- */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+input[type='url'],
+input[type='number'],
+input[type='date'],
+input[type='time'],
+input[type='search'],
+textarea,
+select {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text);
+  transition: all var(--transition-base);
+  box-sizing: border-box;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='number']:focus,
+input[type='date']:focus,
+input[type='time']:focus,
+input[type='search']:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  background-color: var(--color-bg-primary);
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='password']::placeholder,
+input[type='tel']::placeholder,
+input[type='url']::placeholder,
+input[type='number']::placeholder,
+input[type='date']::placeholder,
+input[type='time']::placeholder,
+input[type='search']::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ---- TEXTAREA ---- */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: var(--line-height-relaxed);
+}
+
+textarea.auto-expand {
+  resize: none;
+  overflow: hidden;
+}
+
+/* ---- SELECT ---- */
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3e%3cpolyline points="6 9 12 15 18 9"%3e%3c/polyline%3e%3c/svg%3e');
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-3) center;
+  background-size: 20px;
+  padding-right: var(--spacing-10);
+}
+
+select:disabled {
+  background-color: var(--color-light);
+  cursor: not-allowed;
+}
+
+/* ---- CHECKBOX & RADIO ---- */
+input[type='checkbox'],
+input[type='radio'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+  margin-right: var(--spacing-2);
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.form-check input[type='checkbox'],
+.form-check input[type='radio'] {
+  margin-top: var(--spacing-1);
+  flex-shrink: 0;
+}
+
+.form-check-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-check-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-6);
+  margin-top: var(--spacing-1);
+}
+
+/* ---- INPUT STATES ---- */
+/* Disabled state */
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--color-light);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Valid state */
+input.is-valid,
+textarea.is-valid,
+select.is-valid {
+  border-color: var(--color-success);
+}
+
+input.is-valid:focus,
+textarea.is-valid:focus,
+select.is-valid:focus {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Invalid state */
+input.is-invalid,
+textarea.is-invalid,
+select.is-invalid {
+  border-color: var(--color-error);
+}
+
+input.is-invalid:focus,
+textarea.is-invalid:focus,
+select.is-invalid:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* ---- VALIDATION MESSAGES ---- */
+.form-feedback {
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1);
+  display: none;
+}
+
+.form-feedback.show {
+  display: block;
+}
+
+.form-feedback.valid {
+  color: var(--color-success);
+}
+
+.form-feedback.invalid {
+  color: var(--color-error);
+}
+
+.form-feedback.warning {
+  color: var(--color-warning);
+}
+
+.form-feedback.info {
+  color: var(--color-info);
+}
+
+/* ---- ERROR MESSAGE ---- */
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background-color: rgba(239, 68, 68, 0.1);
+  border: var(--border-width-thin) solid var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  animation: slideInUp var(--transition-base);
+}
+
+.form-error-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.form-error-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-error);
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- SUCCESS MESSAGE ---- */
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background-color: rgba(16, 185, 129, 0.1);
+  border: var(--border-width-thin) solid var(--color-success);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-success);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  animation: slideInUp var(--transition-base);
+}
+
+.form-success-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* ---- FORM ACTIONS ---- */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-4);
+  border-top: var(--border-width-thin) solid var(--color-border);
+}
+
+.form-actions.center {
+  justify-content: center;
+}
+
+.form-actions.right {
+  justify-content: flex-end;
+}
+
+.form-actions.between {
+  justify-content: space-between;
+}
+
+/* ---- INPUT SIZES ---- */
+.input-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.input-lg {
+  padding: var(--spacing-4) var(--spacing-4);
+  font-size: var(--font-size-lg);
+}
+
+.input-xl {
+  padding: var(--spacing-5) var(--spacing-4);
+  font-size: var(--font-size-lg);
+}
+
+/* ---- FIELD WITH ICON ---- */
+.form-field-icon {
+  position: relative;
+}
+
+.form-field-icon input {
+  padding-left: var(--spacing-10);
+}
+
+.form-field-icon-prefix {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  font-size: var(--font-size-lg);
+}
+
+.form-field-icon-suffix {
+  position: absolute;
+  right: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  font-size: var(--font-size-lg);
+}
+
+input.has-suffix {
+  padding-right: var(--spacing-10);
+}
+
+/* ---- FORM RESPONSIVE ---- */
+@media (max-width: 767px) {
+  .form-container {
+    padding: var(--spacing-4);
+  }
+
+  .form-group.row,
+  .form-group.row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    margin-top: var(--spacing-4);
+  }
+
+  .form-actions button,
+  .form-actions a {
+    width: 100%;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='number'],
+  input[type='date'],
+  input[type='time'],
+  input[type='search'],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* ---- DARK MODE ---- */
+:root.dark-theme input[type='text'],
+:root.dark-theme input[type='email'],
+:root.dark-theme input[type='password'],
+:root.dark-theme input[type='tel'],
+:root.dark-theme input[type='url'],
+:root.dark-theme input[type='number'],
+:root.dark-theme input[type='date'],
+:root.dark-theme input[type='time'],
+:root.dark-theme input[type='search'],
+:root.dark-theme textarea,
+:root.dark-theme select {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text);
+}
+
+:root.dark-theme input:disabled,
+:root.dark-theme textarea:disabled,
+:root.dark-theme select:disabled {
+  background-color: var(--color-light);
+}

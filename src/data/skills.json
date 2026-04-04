@@ -1,0 +1,163 @@
+[
+  {
+    "category": "Soft Skills",
+    "skills": [
+      {
+        "name": "Liderazgo",
+        "proficiency": 90
+      },
+      {
+        "name": "Comunicación",
+        "proficiency": 85
+      },
+      {
+        "name": "Análisis crítico",
+        "proficiency": 92
+      },
+      {
+        "name": "Resolución de problemas",
+        "proficiency": 88
+      },
+      {
+        "name": "Gestión de proyectos",
+        "proficiency": 87
+      },
+      {
+        "name": "Mentoría",
+        "proficiency": 83
+      }
+    ]
+  },
+  {
+    "category": "Lenguajes",
+    "skills": [
+      {
+        "name": "Python",
+        "proficiency": null
+      },
+      {
+        "name": "C#",
+        "proficiency": null
+      },
+      {
+        "name": "SQL Server",
+        "proficiency": null
+      },
+      {
+        "name": "Oracle PL/SQL",
+        "proficiency": null
+      },
+      {
+        "name": "JavaScript",
+        "proficiency": null
+      },
+      {
+        "name": "R",
+        "proficiency": null
+      },
+      {
+        "name": "DAX",
+        "proficiency": null
+      }
+    ]
+  },
+  {
+    "category": "Data Science & ML",
+    "skills": [
+      {
+        "name": "Scikit-learn",
+        "proficiency": null
+      },
+      {
+        "name": "Pandas",
+        "proficiency": null
+      },
+      {
+        "name": "TensorFlow",
+        "proficiency": null
+      },
+      {
+        "name": "Keras",
+        "proficiency": null
+      },
+      {
+        "name": "Statsmodels",
+        "proficiency": null
+      },
+      {
+        "name": "Seaborn",
+        "proficiency": null
+      },
+      {
+        "name": "NumPy",
+        "proficiency": null
+      },
+      {
+        "name": "SymPy",
+        "proficiency": null
+      }
+    ]
+  },
+  {
+    "category": "BI & Data Engineering",
+    "skills": [
+      {
+        "name": "Power BI",
+        "proficiency": null
+      },
+      {
+        "name": "Tableau",
+        "proficiency": null
+      },
+      {
+        "name": "IBM DataStage",
+        "proficiency": null
+      },
+      {
+        "name": "ETL / DWH",
+        "proficiency": null
+      },
+      {
+        "name": "ReportBuilder",
+        "proficiency": null
+      },
+      {
+        "name": "SQLAlchemy",
+        "proficiency": null
+      }
+    ]
+  },
+  {
+    "category": "Desarrollo & DevOps",
+    "skills": [
+      {
+        "name": ".NET 8 / MVC",
+        "proficiency": null
+      },
+      {
+        "name": "FastAPI",
+        "proficiency": null
+      },
+      {
+        "name": "Bootstrap",
+        "proficiency": null
+      },
+      {
+        "name": "Azure",
+        "proficiency": null
+      },
+      {
+        "name": "Docker",
+        "proficiency": null
+      },
+      {
+        "name": "Git / GitHub",
+        "proficiency": null
+      },
+      {
+        "name": "REST APIs",
+        "proficiency": null
+      }
+    ]
+  }
+]

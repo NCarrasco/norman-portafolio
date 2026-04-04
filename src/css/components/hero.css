@@ -1,0 +1,360 @@
+/* ===================================================================
+   HERO.CSS - Hero Section Component Styles
+   Hero container, typography, photo, stats, and CTA buttons
+   =================================================================== */
+
+/* ---- HERO SECTION CONTAINER ---- */
+.hero {
+  width: 100%;
+  padding: var(--spacing-8) 0;
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero.full-height {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-8);
+  align-items: center;
+  padding: var(--spacing-4);
+}
+
+/* ---- HERO BACKGROUND EFFECTS ---- */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- HERO GREETING & TITLE ---- */
+.hero-greeting {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-2);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  animation: slideInLeft var(--transition-base) ease-out;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-4);
+  animation: slideInUp var(--transition-base) ease-out 100ms both;
+}
+
+.hero-title strong {
+  color: var(--color-accent);
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- HERO SUBTITLE / DESCRIPTION ---- */
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-6);
+  max-width: 500px;
+  animation: slideInUp var(--transition-base) ease-out 200ms both;
+}
+
+/* ---- HERO CTA BUTTONS ---- */
+.hero-cta {
+  display: flex;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+  animation: slideInUp var(--transition-base) ease-out 300ms both;
+}
+
+.hero-cta-primary,
+.hero-cta-secondary {
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  white-space: nowrap;
+}
+
+.hero-cta-primary {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+.hero-cta-primary:active {
+  transform: translateY(-1px);
+}
+
+.hero-cta-secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.hero-cta-secondary:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hero-cta-secondary:active {
+  transform: translateY(0);
+}
+
+/* ---- HERO STATS ---- */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-6);
+  border-top: var(--border-width-thin) solid var(--color-border);
+  animation: slideInUp var(--transition-base) ease-out 400ms both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  line-height: var(--line-height-tight);
+}
+
+.hero-stat-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-top: var(--spacing-1);
+}
+
+/* ---- HERO IMAGE / PHOTO CONTAINER ---- */
+.hero-media {
+  position: relative;
+  z-index: 1;
+  animation: slideInRight var(--transition-base) ease-out 100ms both;
+}
+
+.hero-photo-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
+}
+
+.hero-photo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(249, 115, 22, 0.2) 100%);
+  z-index: 2;
+}
+
+.hero-photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.hero-photo-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Photo decorative elements */
+.hero-photo-decorator {
+  position: absolute;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.hero-photo-decorator-1 {
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+}
+
+.hero-photo-decorator-2 {
+  width: 90%;
+  height: 90%;
+  bottom: -5%;
+  right: -5%;
+  border-color: var(--color-accent-warm);
+  animation: pulse 3s ease-in-out 0.5s infinite;
+}
+
+/* ---- HERO RESPONSIVE LAYOUT ---- */
+@media (max-width: 1023px) {
+  .hero {
+    padding: var(--spacing-6) 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-5xl);
+  }
+
+  .hero-media {
+    order: -1;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: var(--spacing-6) 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+    padding: var(--spacing-3);
+  }
+
+  .hero.full-height {
+    min-height: auto;
+    padding: var(--spacing-6) 0;
+  }
+
+  .hero-greeting {
+    font-size: var(--font-size-sm);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .hero-cta {
+    gap: var(--spacing-2);
+    flex-direction: column;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-6);
+    padding-top: var(--spacing-4);
+  }
+
+  .hero-photo-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero-photo-decorator-1 {
+    display: none;
+  }
+
+  .hero-photo-decorator-2 {
+    display: none;
+  }
+}
+
+/* ---- HERO VARIANTS ---- */
+.hero.minimal {
+  background: var(--color-bg-primary);
+  padding: var(--spacing-4) 0;
+}
+
+.hero.minimal::before {
+  display: none;
+}
+
+.hero.with-background {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(79,70,229,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="white"/><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+  background-attachment: fixed;
+}
+
+/* ---- HERO ANIMATION STATES ---- */
+.hero-content.loading {
+  opacity: 0;
+}
+
+.hero-content.loaded {
+  animation: fadeIn var(--transition-base) ease-out;
+}
+
+/* ---- DARK MODE ---- */
+:root.dark-theme .hero-photo-container::before {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%);
+}
