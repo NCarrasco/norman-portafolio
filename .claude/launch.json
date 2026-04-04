@@ -3,10 +3,7 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "/usr/bin/python3",
-      "runtimeArgs": ["-m", "http.server"],
-      "port": 8000,
-      "autoPort": true
+      "url": "http://localhost:8765"
     }
   ]
 }
