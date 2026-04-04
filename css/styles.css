@@ -579,16 +579,54 @@ footer {
   section { padding: 6rem 4rem; }
 }
 @media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { gap: 1.5rem; }
-  .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 3rem; }
-  .hero-right { align-items: flex-start; }
-  .hero-stats { max-width: 100%; }
+  nav {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 0.75rem;
+  }
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 3rem;
+    gap: 3rem;
+  }
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+  .hero-tagline {
+    max-width: 100%;
+  }
+  .hero-ctas {
+    justify-content: flex-start;
+  }
+  .about-photo {
+    position: static;
+  }
+  .about-photo-frame {
+    max-width: 100%;
+  }
+  .about-text p {
+    max-width: 100%;
+  }
+  .section-header {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
   section { padding: 4rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .projects-grid { grid-template-columns: 1fr; }
+  .project-card-featured { grid-column: 1; }
+  .testimonials-grid { grid-template-columns: 1fr; }
   .stack-grid { grid-template-columns: 1fr 1fr; }
   .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .skills-grid { grid-template-columns: 1fr; }
   footer { padding: 2rem 1.5rem; }
   #contacto { padding: 4rem 1.5rem !important; }
 }
@@ -682,13 +720,43 @@ footer {
   .skills-grid { max-width: 100%; }
 }
 @media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { gap: 1.5rem; }
-  .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 3rem; }
+  nav {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 0.75rem;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 3rem;
+    gap: 3rem;
+  }
   .hero-right { align-items: flex-start; }
   .hero-stats { max-width: 100%; }
   section { padding: 4rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-photo {
+    position: static;
+    display: flex;
+    justify-content: center;
+  }
+  .about-photo-frame {
+    width: 220px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border-width: 2px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .about-photo-frame img {
+    object-position: center center;
+    border-radius: 50%;
+  }
   .projects-grid { grid-template-columns: 1fr; }
   .project-card-featured { grid-column: 1; }
   .testimonials-grid { grid-template-columns: 1fr; }
