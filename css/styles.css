@@ -267,6 +267,15 @@ section:nth-child(even) { background: var(--off-white); }
   max-width: 72ch;
 }
 
+.exp-bullets {
+  margin-top: 0.75rem;
+  padding-left: 1.1rem;
+}
+
+.exp-bullets li {
+  margin-bottom: 0.45rem;
+}
+
 /* ── PROYECTOS ── */
 .projects-grid {
   display: grid;
@@ -555,6 +564,19 @@ footer {
 .footer-badges img {
   height: 20px;
   border-radius: 4px;
+}
+
+/* ── EXPERIENCE BULLETS ── */
+.exp-bullets {
+  margin-top: 0.75rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+.exp-bullets li {
+  margin-bottom: 0.45rem;
+  font-size: inherit;
+  color: inherit;
+  line-height: 1.6;
 }
 
 /* ── CONTACT LINKS ── */
