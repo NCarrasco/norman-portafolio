@@ -384,6 +384,7 @@
     initForm();
     initMobileMenu();
     initActiveNav();
+    initSmoothScroll();
     console.info('[Portfolio] Interactive features loaded ✓');
   });
 

@@ -190,7 +190,7 @@ section:nth-child(even) { background: var(--off-white); }
 }
 .about-photo-frame img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
+  object-fit: cover; object-position: center;
   display: block;
 }
 .about-photo-frame .photo-placeholder {
@@ -602,39 +602,52 @@ footer {
 }
 
 /* Enhanced hover effects for fluidity */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .project-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .testimonial-card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 10px 28px rgba(192, 57, 43, 0.1);
 }
 
+.cert-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .cert-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+.btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
 .btn:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.contact-method {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 .contact-method:hover {
   transform: scale(1.08) translateY(-2px);
   box-shadow: 0 4px 16px rgba(192, 57, 43, 0.2);
 }
 
+.nav-links a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 .nav-links a:hover {
   transform: translateY(-1px);
   color: var(--text);
-}
-
-/* Smooth transitions for all interactive elements */
-*, *::before, *::after {
-  transition: all 0.3s ease;
 }
 
 /* ── RESPONSIVE ── */
