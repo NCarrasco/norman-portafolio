@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-c", "import http.server; http.server.HTTPServer(('localhost', 8765), http.server.SimpleHTTPRequestHandler).serve_forever()"],
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-e", "require 'webrick'; s=WEBrick::HTTPServer.new(Port:8765,DocumentRoot:'/Users/normancarrasco/Downloads/Potafolio'); trap('INT'){s.shutdown}; s.start"],
       "port": 8765
     }
   ]
