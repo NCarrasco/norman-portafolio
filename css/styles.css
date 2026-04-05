@@ -53,7 +53,7 @@ nav {
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 5.5rem);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -555,6 +555,35 @@ footer {
 .footer-badges img {
   height: 20px;
   border-radius: 4px;
+}
+
+/* ── CONTACT LINKS ── */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+.contact-method {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-warm);
+  text-decoration: none;
+  border: 1px solid var(--mid);
+  border-radius: 999px;
+  margin: 0.3rem;
+  transition: background 0.2s, color 0.2s;
+}
+.contact-method:hover {
+  background: var(--accent-warm);
+  color: #fff;
+  border-color: var(--accent-warm);
 }
 
 /* ── ANIMATIONS ── */

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norman Carrasco — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1a1917;
+      --muted: #888580;
+      --accent: #c0392b;
+      --border: #c8c4bc;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 15px; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.5;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem;
+    }
+
+    /* ── PRINT BUTTON (screen only) ── */
+    .print-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.5rem 1.2rem;
+      background: none;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .print-btn:hover { border-color: var(--accent); color: var(--accent); }
+    @media print { .print-btn { display: none; } }
+
+    /* ── HEADER ── */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--text);
+      margin-bottom: 1.75rem;
+    }
+    .cv-name {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .cv-name em { font-style: italic; color: var(--muted); }
+    .cv-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
+    .cv-contact {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .cv-contact a { color: var(--accent); text-decoration: none; }
+
+    /* ── SECTIONS ── */
+    .cv-section { margin-bottom: 1.75rem; }
+    .cv-section-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── SUMMARY ── */
+    .cv-summary {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .cv-summary strong { color: var(--text); font-weight: 500; }
+
+    /* ── EXPERIENCE ── */
+    .cv-job { margin-bottom: 1.2rem; }
+    .cv-job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .cv-job-role {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .cv-job-period {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .cv-job-company {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .cv-job-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .cv-job-desc strong { color: var(--text); font-weight: 500; }
+
+    /* ── SKILLS ── */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+    .cv-skill-group-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .cv-skill-list {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── EDUCATION ── */
+    .cv-edu-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .cv-edu-year {
+      font-size: 0.75rem;
+      color: var(--muted);
+      min-width: 90px;
+      padding-top: 0.1rem;
+    }
+    .cv-edu-degree {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .cv-edu-institution {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── CERTS ── */
+    .cv-cert-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .cv-cert-pill {
+      font-size: 0.75rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { padding: 1.5rem 1.5rem; font-size: 13px; }
+      .cv-name { font-size: 2rem; }
+      .cv-section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">
+    ⬇ Guardar como PDF — usa Archivo → Imprimir → Guardar como PDF
+  </button>
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <div class="cv-name">Norman<br><em>Carrasco</em></div>
+      <div class="cv-title">Data Scientist &amp; BI Consultant</div>
+    </div>
+    <div class="cv-contact">
+      Santo Domingo, República Dominicana<br>
+      <a href="mailto:norman.carrasco@hotmail.com">norman.carrasco@hotmail.com</a><br>
+      <a href="https://www.linkedin.com/in/nocarrasco" target="_blank">linkedin.com/in/nocarrasco</a><br>
+      <a href="https://github.com/NCarrasco" target="_blank">github.com/NCarrasco</a>
+    </div>
+  </header>
+
+  <!-- RESUMEN -->
+  <section class="cv-section">
+    <div class="cv-section-title">Resumen profesional</div>
+    <p class="cv-summary">
+      Data Scientist y especialista en BI con <strong>10+ años de experiencia</strong> en detección de fraude bancario,
+      machine learning y analítica de datos. Experto en transformar datos complejos en
+      <strong>decisiones estratégicas</strong>. Maestrante en Ciencia de Datos e IA (UASD).
+      Historial comprobado liderando iniciativas de datos en entornos bancarios de alta exigencia.
+    </p>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="cv-section">
+    <div class="cv-section-title">Experiencia</div>
+
+    <div class="cv-job">
+      <div class="cv-job-header">
+        <div class="cv-job-role">Subgerente de Prevención Interna</div>
+        <div class="cv-job-period">Jul 2024 — Actual</div>
+      </div>
+      <div class="cv-job-company">Banreservas</div>
+      <div class="cv-job-desc">
+        Liderazgo estratégico en la prevención de fraude. Diseño e implementación de
+        políticas de control, supervisión de equipos analíticos y reporte ejecutivo.
+      </div>
+    </div>
+
+    <div class="cv-job">
+      <div class="cv-job-header">
+        <div class="cv-job-role">Encargado de Prevención Interna</div>
+        <div class="cv-job-period">Abr 2022 — Jul 2024</div>
+      </div>
+      <div class="cv-job-company">Banreservas</div>
+      <div class="cv-job-desc">
+        Desarrollo de modelos de detección de fraude, gestión de alertas operativas y
+        plataformas de workflow. Lideré el diseño de <strong>Fraud Workflow Management</strong>
+        (.NET 8, ASP.NET Core MVC) para la gestión integral del ciclo de vida de casos.
+      </div>
+    </div>
+
+    <div class="cv-job">
+      <div class="cv-job-header">
+        <div class="cv-job-role">Analista de Datos</div>
+        <div class="cv-job-period">Jun 2016 — Abr 2022</div>
+      </div>
+      <div class="cv-job-company">Banreservas</div>
+      <div class="cv-job-desc">
+        Desarrollo y mantenimiento de reportes estratégicos para la continuidad del negocio.
+        Lideré la migración ETL de DataManager hacia <strong>IBM DataStage</strong> y la
+        puesta en producción de reportes críticos del core bancario <strong>Signature</strong>.
+      </div>
+    </div>
+
+    <div class="cv-job">
+      <div class="cv-job-header">
+        <div class="cv-job-role">Analista de Desarrollo de Software</div>
+        <div class="cv-job-period">Jun 2015 — Jul 2016</div>
+      </div>
+      <div class="cv-job-company">Infosyp (consultor en Banreservas)</div>
+      <div class="cv-job-desc">
+        Desarrollo de <strong>webservices</strong> para integración de aplicaciones bancarias
+        internas y externas. Stack: <strong>Visual Studio .NET, C#</strong>.
+      </div>
+    </div>
+
+    <div class="cv-job">
+      <div class="cv-job-header">
+        <div class="cv-job-role">Analista de Desarrollo de Software</div>
+        <div class="cv-job-period">Nov 2014 — Ene 2015</div>
+      </div>
+      <div class="cv-job-company">Ministerio de Obras Públicas y Comunicaciones</div>
+      <div class="cv-job-desc">
+        Desarrollo e implementación de servicios web para interoperabilidad entre sistemas
+        del Ministerio y plataformas del Estado dominicano. Stack: <strong>.NET, C#, SQL Server</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="cv-section">
+    <div class="cv-section-title">Habilidades técnicas</div>
+    <div class="cv-skills-grid">
+      <div>
+        <div class="cv-skill-group-label">Lenguajes</div>
+        <div class="cv-skill-list">Python · C# · SQL Server · Oracle PL/SQL · JavaScript · R · DAX</div>
+      </div>
+      <div>
+        <div class="cv-skill-group-label">Data Science &amp; ML</div>
+        <div class="cv-skill-list">Scikit-learn · Pandas · TensorFlow · Keras · Statsmodels · NumPy</div>
+      </div>
+      <div>
+        <div class="cv-skill-group-label">BI &amp; Data Engineering</div>
+        <div class="cv-skill-list">Power BI · Tableau · IBM DataStage · ETL / DWH · ReportBuilder</div>
+      </div>
+      <div>
+        <div class="cv-skill-group-label">Desarrollo &amp; DevOps</div>
+        <div class="cv-skill-list">.NET 8 / MVC · FastAPI · Azure · Docker · Git / GitHub · REST APIs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCACION -->
+  <section class="cv-section">
+    <div class="cv-section-title">Educación</div>
+
+    <div class="cv-edu-item">
+      <div class="cv-edu-year">2024 — Actual</div>
+      <div>
+        <div class="cv-edu-degree">Maestría en Ciencia de Datos e Inteligencia Artificial</div>
+        <div class="cv-edu-institution">Universidad Autónoma de Santo Domingo (UASD)</div>
+      </div>
+    </div>
+    <div class="cv-edu-item">
+      <div class="cv-edu-year">2008 — 2014</div>
+      <div>
+        <div class="cv-edu-degree">Ingeniería en Informática</div>
+        <div class="cv-edu-institution">Universidad Tecnológica de Santiago (UTESA)</div>
+      </div>
+    </div>
+    <div class="cv-edu-item">
+      <div class="cv-edu-year">2023</div>
+      <div>
+        <div class="cv-edu-degree">Diplomado en Auditoría Forense — Prevención e Investigación de Delitos Financieros</div>
+        <div class="cv-edu-institution">SIANA Graduate School</div>
+      </div>
+    </div>
+    <div class="cv-edu-item">
+      <div class="cv-edu-year">2022</div>
+      <div>
+        <div class="cv-edu-degree">Diplomado en Ciberseguridad y Ciberdefensa</div>
+        <div class="cv-edu-institution">UNADE – Universidad Nacional para la Defensa, Ministerio de Defensa RD</div>
+      </div>
+    </div>
+    <div class="cv-edu-item">
+      <div class="cv-edu-year">2021</div>
+      <div>
+        <div class="cv-edu-degree">Diplomado Power BI e Inteligencia de Negocios</div>
+        <div class="cv-edu-institution">SIENA Graduate School</div>
+      </div>
+    </div>
+    <div class="cv-edu-item">
+      <div class="cv-edu-year">2019</div>
+      <div>
+        <div class="cv-edu-degree">Diplomado Big Data &amp; Business Intelligence</div>
+        <div class="cv-edu-institution">Universidad Autónoma de Santo Domingo (UASD)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICACIONES -->
+  <section class="cv-section">
+    <div class="cv-section-title">Certificaciones</div>
+    <div class="cv-cert-list">
+      <span class="cv-cert-pill">Microsoft SQL Server 2012</span>
+      <span class="cv-cert-pill">Indicadores Claves con Power BI</span>
+      <span class="cv-cert-pill">Seguridad Cibernética — Academia Banreservas</span>
+      <span class="cv-cert-pill">Data Science for Business (DS4B)</span>
+      <span class="cv-cert-pill">Auditoría Interna Basada en Riesgo (IAI-RD)</span>
+    </div>
+  </section>
+
+</body>
+</html>
