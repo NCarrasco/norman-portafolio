@@ -336,9 +336,7 @@ section:nth-child(even) { background: var(--off-white); }
 
 .project-card-featured {
   grid-column: 1 / 3;
-  background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
-  border: 2px solid var(--accent-warm);
-  box-shadow: 0 8px 24px rgba(192, 57, 43, 0.1);
+  background: var(--off-white);
 }
 
 .project-card-featured .project-illustration {
@@ -361,10 +359,7 @@ section:nth-child(even) { background: var(--off-white); }
 }
 
 .project-card-featured:hover {
-  background: linear-gradient(135deg, var(--off-white) 0%, var(--light) 100%);
-  box-shadow: 0 12px 32px rgba(192, 57, 43, 0.15);
-  transform: translateY(-4px);
-  transition: all 0.3s ease;
+  background: var(--light);
 }
 
 /* ── TESTIMONIOS ── */
@@ -670,6 +665,7 @@ footer {
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .skill-item {
