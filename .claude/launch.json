@@ -3,8 +3,9 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "ruby",
-      "runtimeArgs": ["-e", "require 'webrick'; s=WEBrick::HTTPServer.new(Port:8765,DocumentRoot:'/Users/normancarrasco/Downloads/Potafolio'); trap('INT'){s.shutdown}; s.start"],
+      "autoPort": true,
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "--directory", "/tmp/portfolio"],
       "port": 8765
     }
   ]
