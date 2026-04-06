@@ -342,6 +342,6 @@ html.dark-theme .form-success-msg {
   .nav-links { display: none; }
   .nav-links.open { display: flex; flex-direction: column; }
   .nav-links.mobile-open { display: flex; flex-direction: column; width: 100%; padding: 0.5rem 0; gap: 0.25rem; }
-  .search-input { width: 120px; }
-  .search-results { width: 260px; right: 0; }
+  .search-input { width: 100px; max-width: calc(100vw - 140px); }
+  .search-results { width: min(260px, calc(100vw - 2rem)); right: 0; }
 }

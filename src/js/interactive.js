@@ -329,15 +329,19 @@
                     + `?subject=${encodeURIComponent(subject)}`
                     + `&body=${encodeURIComponent(body)}`;
 
-      window.location.href = mailto;
+      // iOS-safe: create a temporary anchor and click it
+      const link = document.createElement('a');
+      link.href = mailto;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-      setTimeout(() => {
-        successMsg.classList.add('visible');
-        form.reset();
-        form.querySelectorAll('.form-group').forEach(g => g.classList.remove('valid', 'invalid'));
-        setTimeout(() => successMsg.classList.remove('visible'), 5000);
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Enviar mensaje'; }
-      }, 500);
+      successMsg.classList.add('visible');
+      form.reset();
+      form.querySelectorAll('.form-group').forEach(g => g.classList.remove('valid', 'invalid'));
+      setTimeout(() => successMsg.classList.remove('visible'), 5000);
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Enviar mensaje'; }
     });
   }
 
