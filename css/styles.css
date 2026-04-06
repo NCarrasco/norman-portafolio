@@ -13,6 +13,11 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+p, li, .project-desc, .exp-desc, .soft-skill-desc, .award-desc,
+.testimonial-quote, .cert-desc, .edu-desc, .contact-desc {
+  text-align: justify;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -949,7 +954,7 @@ footer {
   .about-photo-frame {
     width: 110px;
     aspect-ratio: 3/4;
-    border-radius: 10px;
+    border-radius: 15px;
     flex-shrink: 0;
     margin: 0;
   }
@@ -1115,7 +1120,7 @@ footer {
   .about-photo-frame {
     width: 220px;
     aspect-ratio: 3/4;
-    border-radius: 10px;
+    border-radius: 15px;
     border-width: 1px;
     overflow: hidden;
     margin: 0 auto;
