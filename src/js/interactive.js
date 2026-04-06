@@ -308,7 +308,7 @@
       form.appendChild(successMsg);
     }
 
-    form.addEventListener('submit', async e => {
+    form.addEventListener('submit', e => {
       e.preventDefault();
       let allValid = true;
       form.querySelectorAll('input, textarea').forEach(el => {
@@ -320,20 +320,24 @@
 
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando…'; }
 
-      try {
-        const data = new FormData(form);
-        const res  = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-        if (res.ok) {
-          successMsg.classList.add('visible');
-          form.reset();
-          form.querySelectorAll('.form-group').forEach(g => g.classList.remove('valid', 'invalid'));
-          setTimeout(() => successMsg.classList.remove('visible'), 5000);
-        } else { throw new Error('Server error'); }
-      } catch {
-        alert('Hubo un error al enviar. Por favor intenta de nuevo.');
-      } finally {
+      const name    = form.querySelector('[name="name"]')?.value.trim()    || '';
+      const subject = form.querySelector('[name="subject"]')?.value.trim() || 'Contacto desde portfolio';
+      const message = form.querySelector('[name="message"]')?.value.trim() || '';
+      const body    = `Nombre: ${name}\n\n${message}`;
+
+      const mailto  = `mailto:norman.carrasco@hotmail.com`
+                    + `?subject=${encodeURIComponent(subject)}`
+                    + `&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+
+      setTimeout(() => {
+        successMsg.classList.add('visible');
+        form.reset();
+        form.querySelectorAll('.form-group').forEach(g => g.classList.remove('valid', 'invalid'));
+        setTimeout(() => successMsg.classList.remove('visible'), 5000);
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Enviar mensaje'; }
-      }
+      }, 500);
     });
   }
 

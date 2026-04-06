@@ -224,6 +224,7 @@ section:nth-child(even) { background: var(--off-white); }
   line-height: 1.8; color: var(--text);
   margin-bottom: 1.25rem;
   max-width: 60ch;
+  text-align: justify;
 }
 .about-text p strong { font-weight: 500; }
 .about-details { display: flex; flex-direction: column; gap: 0; }
