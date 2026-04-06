@@ -374,6 +374,40 @@
     sections.forEach(s => observer.observe(s));
   }
 
+  // ─── LIGHTBOX ─────────────────────────────────────────────────────────────
+
+  function initLightbox() {
+    const images = document.querySelectorAll('.award-img');
+    if (!images.length) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<img class="lightbox-img" alt=""><button class="lightbox-close" aria-label="Cerrar">✕</button>';
+    document.body.appendChild(overlay);
+
+    const lightboxImg = overlay.querySelector('.lightbox-img');
+    const closeBtn    = overlay.querySelector('.lightbox-close');
+
+    images.forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  }
+
   // ─── INIT ─────────────────────────────────────────────────────────────────
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -385,6 +419,7 @@
     initMobileMenu();
     initActiveNav();
     initSmoothScroll();
+    initLightbox();
     console.info('[Portfolio] Interactive features loaded ✓');
   });
 
