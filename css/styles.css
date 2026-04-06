@@ -190,6 +190,7 @@ section:nth-child(even) { background: var(--off-white); }
   border: 1px solid var(--mid);
   background: var(--light);
   position: relative;
+  border-radius: 5px;
 }
 .about-photo-frame img {
   width: 100%; height: 100%;
@@ -940,6 +941,8 @@ footer {
   }
   .about-photo-frame {
     width: 110px;
+    aspect-ratio: 3/4;
+    border-radius: 5px;
     flex-shrink: 0;
     margin: 0;
   }
@@ -1104,15 +1107,15 @@ footer {
   }
   .about-photo-frame {
     width: 220px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    border-width: 2px;
+    aspect-ratio: 3/4;
+    border-radius: 5px;
+    border-width: 1px;
     overflow: hidden;
     margin: 0 auto;
   }
   .about-photo-frame img {
-    object-position: center center;
-    border-radius: 50%;
+    object-position: center top;
+    border-radius: 0;
   }
   .about-photo-name,
   .about-photo-title {
