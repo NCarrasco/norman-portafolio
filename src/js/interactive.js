@@ -460,27 +460,39 @@
   // ─── READ MORE / VER MÁS ─────────────────────────────────────────────────
 
   function initReadMore() {
-    const CHAR_LIMIT = 120;
+    const CHAR_LIMIT  = 110;
+    const VISIBLE_LINES = 3;
 
-    document.querySelectorAll('.testimonial-quote').forEach(quote => {
-      const full = quote.textContent.trim();
-      if (full.length <= CHAR_LIMIT) return;   // short enough — no button needed
+    function setup(el) {
+      if (el.textContent.trim().length <= CHAR_LIMIT) return;
 
-      // Collapse by default
-      quote.classList.add('is-collapsed');
+      // Measure collapsed height: font-size × line-height × lines
+      const style       = getComputedStyle(el);
+      const fontSize    = parseFloat(style.fontSize);
+      const lineHeight  = parseFloat(style.lineHeight) || fontSize * 1.8;
+      const collapsed   = Math.round(lineHeight * VISIBLE_LINES);
+
+      el.classList.add('read-more-collapsible');
+      el.style.maxHeight = collapsed + 'px';
 
       const btn = document.createElement('button');
       btn.className = 'read-more-btn';
-      btn.textContent = 'Ver más ↓';
+      btn.innerHTML  = 'Ver más <span class="rm-arrow">↓</span>';
+      el.insertAdjacentElement('afterend', btn);
 
+      let open = false;
       btn.addEventListener('click', () => {
-        const collapsed = quote.classList.toggle('is-collapsed');
-        btn.textContent = collapsed ? 'Ver más ↓' : 'Ver menos ↑';
+        open = !open;
+        el.style.maxHeight  = open ? el.scrollHeight + 'px' : collapsed + 'px';
+        btn.innerHTML = open
+          ? 'Ver menos <span class="rm-arrow">↓</span>'
+          : 'Ver más <span class="rm-arrow">↓</span>';
+        btn.classList.toggle('expanded', open);
       });
+    }
 
-      // Insert button right after the quote
-      quote.insertAdjacentElement('afterend', btn);
-    });
+    document.querySelectorAll('.testimonial-quote').forEach(setup);
+    document.querySelectorAll('.soft-skill-desc').forEach(setup);
   }
 
   // ─── INIT ─────────────────────────────────────────────────────────────────

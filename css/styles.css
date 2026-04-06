@@ -423,11 +423,9 @@ section:nth-child(even) { background: var(--off-white); }
 }
 
 /* ── VER MÁS / VER MENOS ── */
-.testimonial-quote.is-collapsed {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+.read-more-collapsible {
   overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .read-more-btn {
   background: none;
@@ -438,12 +436,19 @@ section:nth-child(even) { background: var(--off-white); }
   font-family: var(--sans);
   letter-spacing: 0.06em;
   cursor: pointer;
-  padding: 0.25rem 0;
+  padding: 0.3rem 0 0.1rem;
   margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   transition: opacity 0.2s;
-  display: block;
 }
 .read-more-btn:hover { opacity: 0.7; }
+.read-more-btn .rm-arrow {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.read-more-btn.expanded .rm-arrow { transform: rotate(180deg); }
 
 .testimonial-quote::before {
   content: '"';
