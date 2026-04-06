@@ -982,7 +982,7 @@ footer {
   .about-photo-frame {
     width: 110px;
     aspect-ratio: 3/4;
-    border-radius: 25px;
+    border-radius: 35px;
     flex-shrink: 0;
     margin: 0;
   }
@@ -1148,7 +1148,7 @@ footer {
   .about-photo-frame {
     width: 220px;
     aspect-ratio: 3/4;
-    border-radius: 25px;
+    border-radius: 35px;
     border-width: 1px;
     overflow: hidden;
     margin: 0 auto;

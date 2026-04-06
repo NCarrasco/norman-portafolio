@@ -321,12 +321,18 @@
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando…'; }
 
       const name    = form.querySelector('[name="name"]')?.value.trim()    || '';
+      const email   = form.querySelector('[name="email"]')?.value.trim()   || '';
       const subject = form.querySelector('[name="subject"]')?.value.trim() || 'Contacto desde portfolio';
       const message = form.querySelector('[name="message"]')?.value.trim() || '';
-      const body    = `Nombre: ${name}\n\n${message}`;
 
+      // Body includes sender info so Norman can reply
+      const body = `Nombre: ${name}\nEmail: ${email}\n\n${message}`;
+
+      // mailto opens the VISITOR's email app pre-filled to send TO Norman
+      // reply-to is set so Norman can reply directly to the sender
       const mailto  = `mailto:norman.carrasco@hotmail.com`
                     + `?subject=${encodeURIComponent(subject)}`
+                    + `&reply-to=${encodeURIComponent(email)}`
                     + `&body=${encodeURIComponent(body)}`;
 
       // iOS-safe: create a temporary anchor and click it
