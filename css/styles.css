@@ -30,10 +30,11 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1.25rem 4rem;
+  padding: 1.25rem 3rem;
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--light);
+  gap: 1.5rem;
 }
 .nav-logo {
   font-family: var(--serif);
@@ -41,13 +42,15 @@ nav {
   letter-spacing: -0.01em;
   color: var(--text);
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links { display: flex; gap: 1.75rem; list-style: none; flex-wrap: nowrap; }
 .nav-links a {
-  font-size: 0.8rem; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--text-muted); text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s; white-space: nowrap;
 }
 .nav-links a:hover { color: var(--text); }
 
@@ -791,6 +794,8 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1200px) {
+  nav { padding: 1.25rem 2rem; gap: 1rem; }
+  .nav-links { gap: 1.25rem; }
   .hero { padding: 0 4rem; gap: 4rem; }
   section { padding: 6rem 4rem; }
 }
@@ -845,6 +850,38 @@ footer {
   .skills-grid { grid-template-columns: 1fr; }
   footer { padding: 2rem 1.5rem; }
   #contacto { padding: 4rem 1.5rem !important; }
+}
+
+/* ── PHONE (≤ 480px) ── */
+@media (max-width: 480px) {
+  section { padding: 3rem 1.25rem; }
+
+  /* Sobre mí: foto pequeña + nombre a la derecha */
+  .about-photo {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    justify-content: flex-start;
+  }
+  .about-photo-frame {
+    width: 110px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  .about-photo-name { font-size: 0.95rem; text-align: left; }
+  .about-photo-title { font-size: 0.65rem; text-align: left; }
+
+  /* Detail rows: apilar label encima del valor */
+  .detail-row {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem 0;
+    align-items: flex-start;
+  }
+  .detail-value { text-align: left; max-width: 100%; }
+
+  /* Habilidades blandas: 1 columna */
+  .soft-skills-cards { grid-template-columns: 1fr; }
 }
 
 /* ── CONTACTO ── */
@@ -948,17 +985,11 @@ footer {
     align-items: flex-start;
     gap: 0.75rem;
   }
-  .nav-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 0.5rem;
-  }
   .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     width: 100%;
     padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid var(--light);
   }
   .hero {
     grid-template-columns: 1fr;

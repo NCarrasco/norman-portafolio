@@ -290,6 +290,7 @@ html.dark-theme .form-success-msg {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .nav-search {
@@ -336,8 +337,11 @@ html.dark-theme .form-success-msg {
 
 @media (max-width: 900px) {
   .hamburger-btn { display: flex; }
+  .nav-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s ease; }
   .nav-links { display: none; }
   .nav-links.open { display: flex; flex-direction: column; }
+  .nav-links.mobile-open { display: flex; flex-direction: column; width: 100%; padding: 0.5rem 0; gap: 0.25rem; }
   .search-input { width: 120px; }
   .search-results { width: 260px; right: 0; }
 }
