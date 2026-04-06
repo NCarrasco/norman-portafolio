@@ -639,15 +639,23 @@ footer {
 
 /* ── LIGHTBOX ── */
 .lightbox-overlay {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.92);
   z-index: 9999;
+  display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
-.lightbox-overlay.active { display: flex; }
+.lightbox-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 .lightbox-img {
   max-width: 90vw;
   max-height: 90vh;
