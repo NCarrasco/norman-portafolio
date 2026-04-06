@@ -422,6 +422,29 @@ section:nth-child(even) { background: var(--off-white); }
   padding-left: 1.5rem;
 }
 
+/* ── VER MÁS / VER MENOS ── */
+.testimonial-quote.is-collapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--accent-warm);
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-family: var(--sans);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  margin-left: 1.5rem;
+  transition: opacity 0.2s;
+  display: block;
+}
+.read-more-btn:hover { opacity: 0.7; }
+
 .testimonial-quote::before {
   content: '"';
   position: absolute;
@@ -954,7 +977,7 @@ footer {
   .about-photo-frame {
     width: 110px;
     aspect-ratio: 3/4;
-    border-radius: 15px;
+    border-radius: 25px;
     flex-shrink: 0;
     margin: 0;
   }
@@ -1120,7 +1143,7 @@ footer {
   .about-photo-frame {
     width: 220px;
     aspect-ratio: 3/4;
-    border-radius: 15px;
+    border-radius: 25px;
     border-width: 1px;
     overflow: hidden;
     margin: 0 auto;

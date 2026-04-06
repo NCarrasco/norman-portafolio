@@ -457,6 +457,32 @@
     });
   }
 
+  // ─── READ MORE / VER MÁS ─────────────────────────────────────────────────
+
+  function initReadMore() {
+    const CHAR_LIMIT = 120;
+
+    document.querySelectorAll('.testimonial-quote').forEach(quote => {
+      const full = quote.textContent.trim();
+      if (full.length <= CHAR_LIMIT) return;   // short enough — no button needed
+
+      // Collapse by default
+      quote.classList.add('is-collapsed');
+
+      const btn = document.createElement('button');
+      btn.className = 'read-more-btn';
+      btn.textContent = 'Ver más ↓';
+
+      btn.addEventListener('click', () => {
+        const collapsed = quote.classList.toggle('is-collapsed');
+        btn.textContent = collapsed ? 'Ver más ↓' : 'Ver menos ↑';
+      });
+
+      // Insert button right after the quote
+      quote.insertAdjacentElement('afterend', btn);
+    });
+  }
+
   // ─── INIT ─────────────────────────────────────────────────────────────────
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -468,6 +494,7 @@
     initMobileMenu();
     initActiveNav();
     initLightbox();
+    initReadMore();
     console.info('[Portfolio] Interactive features loaded ✓');
   });
 
