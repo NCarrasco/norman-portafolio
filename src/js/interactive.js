@@ -382,30 +382,71 @@
 
     const overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
-    overlay.innerHTML = '<img class="lightbox-img" alt=""><button class="lightbox-close" aria-label="Cerrar">✕</button>';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.innerHTML = `
+      <button class="lightbox-close" aria-label="Cerrar">✕</button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Anterior">&#8249;</button>
+      <div class="lightbox-content">
+        <img class="lightbox-img" alt="">
+        <div class="lightbox-caption">
+          <span class="lightbox-caption-title"></span>
+          <span class="lightbox-caption-meta"></span>
+        </div>
+      </div>
+      <button class="lightbox-nav lightbox-next" aria-label="Siguiente">&#8250;</button>
+    `;
     document.body.appendChild(overlay);
 
-    const lightboxImg = overlay.querySelector('.lightbox-img');
-    const closeBtn    = overlay.querySelector('.lightbox-close');
+    const lightboxImg   = overlay.querySelector('.lightbox-img');
+    const captionTitle  = overlay.querySelector('.lightbox-caption-title');
+    const captionMeta   = overlay.querySelector('.lightbox-caption-meta');
+    const closeBtn      = overlay.querySelector('.lightbox-close');
+    const prevBtn       = overlay.querySelector('.lightbox-prev');
+    const nextBtn       = overlay.querySelector('.lightbox-next');
 
-    images.forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    });
+    const imgArray = Array.from(images);
+    let current = 0;
+
+    function openAt(index) {
+      current = (index + imgArray.length) % imgArray.length;
+      const img  = imgArray[current];
+      const card = img.closest('.award-card');
+      lightboxImg.src = '';                          // reset to trigger fade
+      requestAnimationFrame(() => { lightboxImg.src = img.src; });
+      lightboxImg.alt = img.alt;
+      captionTitle.textContent = card?.querySelector('.award-title')?.textContent || '';
+      captionMeta.textContent  = card?.querySelector('.award-meta')?.textContent  || '';
+      // Nav visibility
+      prevBtn.style.display = imgArray.length > 1 ? '' : 'none';
+      nextBtn.style.display = imgArray.length > 1 ? '' : 'none';
+    }
+
+    function openLightbox(index) {
+      openAt(index);
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
     function closeLightbox() {
       overlay.classList.remove('active');
       document.body.style.overflow = '';
     }
 
+    imgArray.forEach((img, i) => {
+      img.addEventListener('click', () => openLightbox(i));
+    });
+
     closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', e => { e.stopPropagation(); openAt(current - 1); });
+    nextBtn.addEventListener('click', e => { e.stopPropagation(); openAt(current + 1); });
     overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   openAt(current - 1);
+      if (e.key === 'ArrowRight')  openAt(current + 1);
+    });
   }
 
   // ─── INIT ─────────────────────────────────────────────────────────────────
