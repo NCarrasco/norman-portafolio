@@ -16,6 +16,8 @@
       "Bootstrap"
     ],
     "featured": true,
+    "nature": "professional",
+    "highlight_order": 1,
     "link": "https://github.com/NCarrasco/FRAUD-WORKFLOW-MANAGEMENT"
   },
   {
@@ -34,7 +36,9 @@
       "Machine Learning",
       "Python"
     ],
-    "featured": false,
+    "featured": true,
+    "nature": "academic",
+    "highlight_order": 2,
     "link": "https://github.com/NCarrasco/clasificacion-matricula-rd"
   },
   {
@@ -112,7 +116,9 @@
       "Backend",
       "API"
     ],
-    "featured": false,
+    "featured": true,
+    "nature": "personal",
+    "highlight_order": 3,
     "link": "https://github.com/NCarrasco/stellapay-pos"
   }
 ]
